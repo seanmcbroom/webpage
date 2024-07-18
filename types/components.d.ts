@@ -7,21 +7,11 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    ButtonElement: typeof import('./../src/components/ButtonElement/ButtonElement.vue')['default']
-    ContactForm: typeof import('./../src/components/ContactForm/ContactForm.vue')['default']
-    DividerElement: typeof import('./../src/components/Layout/DividerElement/DividerElement.vue')['default']
-    DotDividerElement: typeof import('./../src/components/Layout/DotDividerElement/DotDividerElement.vue')['default']
-    FooterDisclaimer: typeof import('./../src/components/Layout/FooterItem/FooterDisclaimer.vue')['default']
-    FooterItem: typeof import('./../src/components/Layout/FooterItem/FooterItem.vue')['default']
-    FooterLinks: typeof import('./../src/components/Layout/FooterItem/FooterLinks.vue')['default']
     LanguageSelector: typeof import('./../src/components/Selectors/LanguageSelector/LanguageSelector.vue')['default']
-    MoonIcon: typeof import('./../src/components/Icons/MoonIcon.vue')['default']
     Page: typeof import('./../src/components/Layout/Page/Page.vue')['default']
     PageSuspense: typeof import('./../src/components/PageSuspense.vue')['default']
-    ProjectTile: typeof import('./../src/components/ProjectTile/ProjectTile.vue')['default']
     PSABanner: typeof import('./../src/components/Layout/PSABanner/PSABanner.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SunIcon: typeof import('./../src/components/Icons/SunIcon.vue')['default']
   }
 }
