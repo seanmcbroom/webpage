@@ -1,9 +1,5 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
-// import { Header } from '../HeaderItem'
-// import { NavBar } from '../NavBarItem'
-import { Footer } from '../FooterItem'
-import { PSABanner } from '../PSABanner'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()

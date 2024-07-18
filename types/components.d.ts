@@ -22,7 +22,6 @@ declare module 'vue' {
     PSABanner: typeof import('./../src/components/Layout/PSABanner/PSABanner.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SiteLogo: typeof import('./../src/components/Images/SiteLogo.vue')['default']
     SunIcon: typeof import('./../src/components/Icons/SunIcon.vue')['default']
   }
 }

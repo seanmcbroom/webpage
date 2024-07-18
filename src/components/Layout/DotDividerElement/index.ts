@@ -1,1 +1,0 @@
-export {default as DotDivider} from "./DotDividerElement.vue"
