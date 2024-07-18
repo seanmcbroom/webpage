@@ -1,0 +1,119 @@
+@font-face {
+  font-family:
+    'Ubuntu Mono',
+    'Times New Roman' monospace;
+  font-weight: 400;
+  font-style: normal;
+  src: url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --vt-c-white: #ffffff;
+  --vt-c-white-soft: #e1e1e1;
+  --vt-c-white-mute: #f2f2f2;
+
+  --vt-c-black: rgb(9, 11, 14);
+  --vt-c-black-soft: rgb(15, 18, 22);
+  --vt-c-black-mute: rgb(34, 34, 34);
+
+  --vt-c-accent: #3f71ee;
+
+  --vt-c-button-light: #3498db;
+  --vt-c-button-hover-light: #2980b9;
+  --vt-c-button-text-color-light: #fff;
+  --vt-c-button-dark: #252525;
+  --vt-c-button-hover-dark: #272727;
+  --vt-c-button-text-color-dark: #fff;
+
+  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --vt-c-text-light-1: var(--vt-c-black);
+  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
+  --vt-c-text-dark-1: var(--vt-c-white);
+  --vt-c-text-dark-2: rgba(250, 250, 250, 0.822);
+}
+
+html[data-theme='light'] {
+  --color-background: var(--vt-c-white);
+  --color-background-soft: var(--vt-c-white-soft);
+  --color-background-mute: var(--vt-c-white-mute);
+
+  --color-accent: var(--vt-c-accent);
+
+  --color-button: var(--vt-c-button-light);
+  --color-button-hover: var(--vt-c-button-hover-light);
+  --color-button-text: var(--vt-c-button-text-color-light);
+
+  --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1);
+
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-light-1);
+
+  --section-gap: 160px;
+}
+
+html[data-theme='dark'] {
+  --color-background: var(--vt-c-black);
+  --color-background-soft: var(--vt-c-black-soft);
+  --color-background-mute: var(--vt-c-black-mute);
+
+  --color-button: var(--vt-c-button-dark);
+  --color-button-hover: var(--vt-c-button-hover-dark);
+  --color-button-text: var(--vt-c-button-text-color-dark);
+
+  --color-accent: var(--vt-c-accent);
+
+  --color-border: var(--vt-c-divider-dark-2);
+  --color-border-hover: var(--vt-c-divider-dark-1);
+
+  --color-heading: var(--vt-c-text-dark-1);
+  --color-text: var(--vt-c-text-dark-2);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  transition: ease color 0.5s;
+  line-height: 1.6;
+
+  background-color: var(--color-background);
+  color: var(--color-text);
+
+  font-family: 'Ubuntu Mono', 'Times New Roman', monospace;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  user-select: none;
+}
+
+a:link {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--color-accent);
+}

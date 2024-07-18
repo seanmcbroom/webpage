@@ -1,0 +1,12 @@
+@import './base.css';
+
+#app {
+  margin: 0 auto;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text);
+  transition: ease 0.4s;
+}

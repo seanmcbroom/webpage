@@ -1,0 +1,1 @@
+export {default as PSABanner} from "./PSABanner.vue"
