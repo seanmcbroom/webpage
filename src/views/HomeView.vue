@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-col my-auto mx-5 items-center space-y-2">
-    <a class="md:text-5xl text-xl font-bold italic text-center text-[#20124d]"> SEAN MCBROOM </a>
+    <a class="md:text-4xl text-xl font-bold italic text-center text-[#20124d]"> SEAN MCBROOM </a>
 
-    <img :src="gunflint" class="md:w-[560px] w-[300px] h-auto" alt="" />
+    <img :src="gunflint" class="md:w-[500px] w-[300px] h-auto" alt="" />
 
     <a class="text-lg font-600 text-center"
       >{{ $t('time in wdm') }} <a class="font-bold">{{ currentTime }}</a> CDT</a
