@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col my-auto mx-5 items-center space-y-2">
-    <a class="md:text-4xl text-xl font-bold italic text-center text-[#20124d]"> SEAN MCBROOM </a>
+    <a class="md:text-4xl text-xl font-bold italic text-center"> SEAN MCBROOM </a>
 
     <img :src="gunflint" class="md:w-[500px] w-[300px] h-auto" alt="" />
 
@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
 import gunflint from '@/assets/images/gunflint.webp'
-import resume from '@/assets/files/Sean McBroom Resume 2024.pdf'
+import resume from '@/assets/files/Sean McBroom Resume 2024Q2.pdf'
 import { useDocumentTitle } from '@/composables/useDocumentTitle'
 import { ref, watch, watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
