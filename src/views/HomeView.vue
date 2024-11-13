@@ -21,7 +21,6 @@
 
 <script setup lang="ts">
 import gunflint from '@/assets/images/gunflint.webp'
-import resume from '@/assets/files/Sean McBroom Resume 2024Q2.pdf'
 import { useDocumentTitle } from '@/composables/useDocumentTitle'
 import { ref, watch, watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -43,7 +42,7 @@ const updateLinks = () => {
   links.value = [
     { text: t('about'), href: 'about', target: '_self' },
     // { text: t('blog'), href: 'blog' },
-    { text: t('resume'), href: resume, target: '_blank' },
+    { text: t('resume'), href: 'resume', target: '_blank' },
     { text: t('contact'), href: 'contact', target: '_self' },
     { text: t('github'), href: 'https://github.com/seanmcbroom', target: '_blank' }
     // { text: t('sourceCode'), href: 'https://github.com/seanmcbroom', target: '_blank' }
