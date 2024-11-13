@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col my-auto max-w-[700px] items-center space-y-5 mx-5 md:space-x-5">
-    <div class="flex flex-col items-center space-y-5 md:space-x-5 md:flex-row">
-      <img :src="pfp" alt="profile" class="w-[150px] rounded-full" />
+  <div class="flex flex-col my-auto max-w-[700px] items-center space-y-3 mx-5 md:space-x-5">
+    <div class="flex flex-col items-center md:space-x-5 md:flex-row">
+      <img :src="pfp" alt="profile" class="w-[150px] rounded-[10%]" />
 
       <a>
         {{ $t('about-description') }}
