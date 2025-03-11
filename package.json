@@ -1,48 +1,34 @@
 {
   "name": "webpage",
-  "version": "0.0.0",
   "private": true,
   "type": "module",
-  "scripts": {
-    "start": "vite",
-    "dev": "npm run start",
-    "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --build --force",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+  "author": "Sean McBroom (sean.mcbroom@outlook.com)",
+  "workspaces": [
+    "frontend",
+    "backend",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=22.11.0 <23.0.0",
+    "npm": ">=10.9.0",
+    "yarn": "yarn is not supported. Please use npm"
   },
-  "dependencies": {
-    "@intlify/unplugin-vue-i18n": "^4.0.0",
-    "@vueuse/core": "^10.11.0",
-    "axios": "^1.6.8",
-    "defu": "^6.1.4",
-    "vue": "^3.4.21",
-    "vue-i18n": "^9.13.1",
-    "vue-router": "^4.3.0"
+  "scripts": {
+    "lint": "npm run lint -ws --if-present",
+    "lint:fix": "npm run lint:fix -ws --if-present",
+    "check:types": "npm run check:types -ws --if-present",
+    "analyze:cycles": "npm run analyze:cycles -ws --if-present",
+    "test": "npm run test -ws --if-present"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.8.0",
-    "@tsconfig/node20": "^20.1.4",
-    "@types/node": "^20.12.11",
-    "@vitejs/plugin-vue": "^5.0.4",
-    "@vitejs/plugin-vue-jsx": "^3.1.0",
-    "@vue/eslint-config-prettier": "^9.0.0",
-    "@vue/eslint-config-typescript": "^13.0.0",
-    "@vue/tsconfig": "^0.5.1",
-    "autoprefixer": "^10.4.19",
-    "eslint": "^8.57.0",
-    "eslint-plugin-vue": "^9.23.0",
-    "file-loader": "^6.2.0",
-    "npm-run-all2": "^6.1.2",
-    "postcss": "^8.4.39",
-    "prettier": "^3.2.5",
-    "tailwindcss": "^3.4.5",
-    "typescript": "~5.4.0",
-    "unplugin-vue-components": "^0.27.2",
-    "url-loader": "^4.1.1",
-    "vite": "^5.2.8",
-    "vue-tsc": "^2.0.11"
+    "@types/node": "22.13.10",
+    "@typescript-eslint/eslint-plugin": "8.26.1",
+    "eslint": "9.14.0",
+    "eslint-plugin-vue": "10.0.0",
+    "type-fest": "4.33.0",
+    "typescript": "5.8.2",
+    "typescript-eslint": "8.26.1",
+    "vitest": "3.0.4",
+    "vue-tsc": "2.2.0"
   }
 }

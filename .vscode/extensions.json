@@ -1,7 +1,17 @@
 {
   "recommendations": [
-    "Vue.volar",
+    "aaron-bond.better-comments",
+    "eamodio.gitlens",
+    "vue.volar",
     "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode"
+    "lokalise.i18n-ally",
+    "ryanluker.vscode-coverage-gutters",
+    "yoavbls.pretty-ts-errors"
+  ],
+  "unwantedRecommendations": [
+    "octref.vetur",
+    "esbenp.prettier-vscode",
+    "vue.vscode-typescript-vue-plugin",
+    "SonarSource.sonarlint-vscode"
   ]
 }
