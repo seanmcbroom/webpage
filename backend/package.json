@@ -1,14 +1,15 @@
 {
   "name": "@webpage/backend",
+  "author": "Sean McBroom (sean.mcbroom@outlook.com)",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "dev": "nodemon src/index.ts -w src",
     "start": "ts-node src/index.ts",
-    "lint": "eslint --fix --ext .ts,.tsx ."
+    "clean": "git clean -fxd"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@types/cli-color": "^2.0.6",
     "@types/express": "^4.17.17",
