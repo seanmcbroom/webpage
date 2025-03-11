@@ -1,5 +1,6 @@
 {
   "name": "@webpage/frontend",
+  "author": "Sean McBroom (sean.mcbroom@outlook.com)",
   "version": "1.0.0",
   "type": "module",
   "imports": {
