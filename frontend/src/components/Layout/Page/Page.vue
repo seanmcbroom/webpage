@@ -8,10 +8,10 @@ const { t } = useI18n()
 
 <template>
   <div class="flex flex-col min-h-[calc(100vh)]">
-    <PSABanner :message="t('psa-message')" />
     <main
       class="flex flex-col items-center h-[100%] min-h-[calc(100vh)] bg-[var(--color-background)]"
     >
+      <PSABanner :message="t('psa-message')" />
       <slot></slot>
     </main>
   </div>
