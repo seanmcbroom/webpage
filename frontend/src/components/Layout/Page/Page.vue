@@ -11,7 +11,6 @@ const { t } = useI18n()
     <main
       class="flex flex-col items-center h-[100%] min-h-[calc(100vh)] bg-[var(--color-background)]"
     >
-      <PSABanner :message="t('psa-message')" />
       <slot></slot>
     </main>
   </div>
