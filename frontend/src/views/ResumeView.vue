@@ -11,7 +11,7 @@
 <script setup lang="ts">
 import { useDocumentTitle } from '@/composables/useDocumentTitle'
 import { useI18n } from 'vue-i18n'
-import resume from '@/assets/files/Sean McBroom Resume 2024Q4.pdf'
+import resume from '@/assets/files/Sean McBroom Resume 2025Q1.pdf'
 
 const { t } = useI18n()
 
