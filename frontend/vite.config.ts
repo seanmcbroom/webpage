@@ -10,6 +10,7 @@ import {
   VueUseComponentsResolver,
   VueUseDirectiveResolver
 } from 'unplugin-vue-components/resolvers'
+import tailwindcss from '@tailwindcss/vite';
 import Components from 'unplugin-vue-components/vite'
 
 // https://vitejs.dev/config/
@@ -24,6 +25,7 @@ export default defineConfig({
       forceStringify: true,
       include: resolve('locales/**')
     }),
+    tailwindcss(),
     // This plugin allows to autoimport Vue components
     Components({
       dts: './types/components.d.ts',

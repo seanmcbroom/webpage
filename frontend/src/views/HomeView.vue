@@ -1,12 +1,12 @@
 <template>
-  <div class="flex flex-col my-auto mx-5 items-center space-y-2">
-    <a class="md:text-4xl text-xl font-bold italic text-center"> SEAN MCBROOM </a>
+  <div class="flex flex-col my-auto items-center space-y-1">
+    <span class="md:text-4xl text-xl font-bold italic text-center"> SEAN MCBROOM </span>
 
     <img :src="gunflint" class="md:w-[500px] w-[300px] h-auto" alt="" />
 
-    <a class="text-lg font-600 text-center"
-      >{{ $t('time in wdm') }} <a class="font-bold">{{ currentTime }}</a> CDT</a
-    >
+    <span class="text-lg font-600 text-center">
+      {{ $t('time in wdm') }} <span class="font-bold">{{ currentTime }}</span> CDT
+    </span>
 
     <div class="flex flex-row space-x-1 text-sm">
       <template v-for="(link, index) in links" :key="index">
