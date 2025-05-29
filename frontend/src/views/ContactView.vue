@@ -5,14 +5,12 @@
     </a>
 
     <div class="flex flex-col items-center">
-      <a>
+      <span>
         {{ $t('email') }}—<a href="mailto:sean.mcbroom@outlook.com">sean.mcbroom@outlook.com</a>
-      </a>
-      <a>
-        {{ $t('linkedin') }}—<a href="https://www.linkedin.com/in/sean-mcbroom/" target="_blank"
-          >https://www.linkedin.com/in/sean-mcbroom</a
-        >
-      </a>
+      </span>
+      <span>
+        {{ $t('linkedin') }}—<a href="https://www.linkedin.com/in/sean-mcbroom/" target="_blank">https://www.linkedin.com/in/sean-mcbroom</a>
+      </span>
     </div>
 
     <a href="/">{{ $t('home') }}</a>

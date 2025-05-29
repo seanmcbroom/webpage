@@ -3,16 +3,16 @@
     <div class="flex flex-col items-center md:space-x-5 md:flex-row">
       <img :src="pfp" alt="profile" class="w-[150px] rounded-[10%]" />
 
-      <a>
+      <span>
         {{ $t('about-description') }}
-      </a>
+      </span>
     </div>
 
-    <a class="text-left w-[100%]">
-      <a>{{ $t('birthday') }}: {{ birthday.toLocaleDateString(locale) }}</a
-      ><br />
-      <a>{{ $t('age') }}: {{ getYearsSince(birthday) }} <br /></a>
-    </a>
+    <span class="text-left w-[100%]">
+      <span>{{ $t('birthday') }}: {{ birthday.toLocaleDateString(locale) }}</span>
+      <br />
+      <span>{{ $t('age') }}: {{ getYearsSince(birthday) }} </span>
+    </span>
 
     <a href="/">{{ $t('home') }}</a>
   </div>
