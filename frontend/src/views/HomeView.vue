@@ -5,7 +5,7 @@
     <img :src="gunflint" class="md:w-[500px] w-[300px] h-auto" alt="" />
 
     <span class="text-lg font-600 text-center">
-      {{ $t('time in wdm') }}{{ $i18n.locale === 'en' && ' ' }}<span class="font-bold">{{ currentTime }}</span>CDT
+      {{ $t('time in wdm') }}{{ $i18n.locale === 'ja' ? '' : ' ' }}<span class="font-bold">{{ currentTime }}</span> CDT
     </span>
 
     <div class="flex flex-row space-x-1 text-sm">
