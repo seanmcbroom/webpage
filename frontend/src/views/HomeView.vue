@@ -41,7 +41,7 @@ const links = ref<Link[]>([])
 const updateLinks = () => {
   links.value = [
     { text: t('about'), href: 'about', target: '_self' },
-    // { text: t('blog'), href: 'blog' },
+    { text: t('blog'), href: 'blog' },
     { text: t('resume'), href: 'resume', target: '_blank' },
     { text: t('contact'), href: 'contact', target: '_self' },
     { text: t('github'), href: 'https://github.com/seanmcbroom', target: '_blank' }

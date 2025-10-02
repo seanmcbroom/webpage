@@ -8,6 +8,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    BlogPost: typeof import('./../src/components/BlogPost.vue')['default']
     LanguageSelector: typeof import('./../src/components/Selectors/LanguageSelector/LanguageSelector.vue')['default']
     Page: typeof import('./../src/components/Layout/Page/Page.vue')['default']
     PageSuspense: typeof import('./../src/components/PageSuspense.vue')['default']
