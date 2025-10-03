@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import { useDocumentTitle } from '@/composables/useDocumentTitle'
 import MarkdownIt from 'markdown-it'
 import { posts } from '@/utils/blog-posts'
 
@@ -12,22 +13,28 @@ const html = ref('')
 const created = ref(new Date())
 const updated = ref(new Date())
 const meta = ref<Record<string, string>>({})
+const title = ref('')
 
-onMounted(() => {
-  const slug = route.params.slug as string
-  const lang = locale.value
+// Call composable at top level
+useDocumentTitle(title)
 
+// Function to load Markdown for a given slug + locale
+const loadMarkdown = (slug: string, lang: string) => {
   const file = Object.keys(posts).find(path =>
     path.endsWith(`${slug}.${lang}.md`)
   )
-
-  if (!file) return
+  if (!file) {
+    html.value = ''
+    meta.value = {}
+    return
+  }
 
   const raw = posts[file]
   const match = /^---([\s\S]*?)---/.exec(raw)
   let markdown = raw
 
   if (match) {
+    meta.value = {}
     match[1].trim().split('\n').forEach(line => {
       const [key, value] = line.split(':').map(s => s.trim())
       if (key) meta.value[key] = value?.replace(/"/g, '')
@@ -39,26 +46,41 @@ onMounted(() => {
   html.value = md.render(markdown)
   created.value = new Date(meta.value.upload)
   updated.value = new Date(meta.value.update)
-})
+  title.value = meta.value.title
+}
+
+// Watch both slug and locale
+watch([() => locale.value], ([lang]) => {
+  if (lang) loadMarkdown(route.params.slug as string, lang)
+}, { immediate: true })
 </script>
 
 <template>
   <article class="prose md:max-w-[700px] max-w-[500px] mx-auto my-16 px-4 sm:px-6 lg:px-0">
-    <!-- Title -->
-    <h1 class="font-bold">{{ meta.title || 'Untitled Post' }}</h1>
+    <!-- Header -->
+    <header class="mb-8 pb-4 border-b border-gray-200">
+      <!-- Title -->
+      <h1 class="font-extrabold text-3xl md:text-4xl leading-tight mb-2">
+        {{ meta.title || $t('unavailable-blog-post') }}
+      </h1>
 
-    <!-- Metadata -->
-    <p class="text-gray-500 text-sm mt-1 ">
-      <span v-if="meta.author">{{$t('by')}} {{ meta.author }}</span>
-      <span v-if="meta.upload"> - {{$t('created')}}: {{ created.toLocaleDateString(locale) }}</span>
-      <span v-if="meta.update"> - {{$t('updated')}}: {{ updated.toLocaleDateString(locale) }}</span>
-    </p>
+      <!-- Metadata -->
+      <p class="text-gray-500 text-sm flex flex-wrap gap-x-2 gap-y-1 mb-2">
+        <span v-if="meta.author">{{ $t('by') }} {{ meta.author }}</span>
+        <span v-if="meta.upload">• {{ $t('created') }}: {{ created.toLocaleDateString(locale) }}</span>
+        <span v-if="meta.update">• {{ $t('updated') }}: {{ updated.toLocaleDateString(locale) }}</span>
+      </p>
 
-    <p class="text-gray-500 text-sm mt-1">
-      <em v-if="meta.description">{{ meta.description }}</em>
-    </p>
+      <!-- Description -->
+      <p v-if="meta.description" class="text-gray-600 italic text-sm mb-4">
+        {{ meta.description }}
+      </p>
 
-    <hr/>
+      <!-- Language selector -->
+      <div class="mb-0">
+        <LanguageSelector />
+      </div>
+    </header>
 
     <!-- Markdown content -->
     <div v-html="html" class="mt-6"></div>

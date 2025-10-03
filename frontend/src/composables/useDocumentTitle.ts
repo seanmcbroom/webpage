@@ -1,15 +1,20 @@
-import { watch } from 'vue'
+import { watch, unref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import type { Ref } from 'vue'
 
 const DEFAULT_TITLE = 'SEAN MCBROOM'
-export function useDocumentTitle(titleKey: string = '') {
+
+export function useDocumentTitle(titleKey: string | Ref<string> = '') {
   const { t, locale } = useI18n()
 
   const updateTitle = () => {
-    document.title = titleKey.length > 0 ? `${DEFAULT_TITLE} | ${t(titleKey)}` : DEFAULT_TITLE
+    const key = unref(titleKey) // unwrap ref if needed
+    document.title = key.length > 0 ? `${t(key)} | ${DEFAULT_TITLE}` : DEFAULT_TITLE
   }
 
+  // Initial set
   updateTitle()
 
-  watch(locale, updateTitle)
+  // Watch both the locale and the titleKey
+  watch([() => locale.value, () => unref(titleKey)], updateTitle, { immediate: true })
 }
