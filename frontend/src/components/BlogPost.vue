@@ -56,7 +56,7 @@ watch([() => locale.value], ([lang]) => {
 </script>
 
 <template>
-  <article class="prose md:max-w-[700px] max-w-[500px] mx-auto my-16 px-4 sm:px-6 lg:px-0">
+  <article class="prose md:max-w-[700px] max-w-[500px] mx-auto my-10 px-4 sm:px-6 lg:px-0">
     <!-- Header -->
     <header class="border-b border-gray-200 [&>*]:mb-2 [&>*]:mt-0">
       <!-- Title -->
