@@ -4,8 +4,10 @@
   "age": "age",
   "birthday": "birthday",
   "blog": "blog",
+  "by": "By",
   "contact": "contact",
   "contact-disclaimer": "i'll only respond to proposals that are a good match for my schedule and interests. thank you.",
+  "created": "Created",
   "email": "email",
   "faq": "faq",
   "github": "github",
@@ -19,5 +21,6 @@
   "select": "select",
   "sourceCode": "source code",
   "time in wdm": "TIME IN DES MOINES",
+  "updated": "Updated",
   "white-race": "white"
 }

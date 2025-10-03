@@ -9,6 +9,8 @@ const route = useRoute()
 const { locale } = useI18n()
 
 const html = ref('')
+const created = ref(new Date())
+const updated = ref(new Date())
 const meta = ref<Record<string, string>>({})
 
 onMounted(() => {
@@ -35,13 +37,30 @@ onMounted(() => {
 
   const md = new MarkdownIt()
   html.value = md.render(markdown)
+  created.value = new Date(meta.value.upload)
+  updated.value = new Date(meta.value.update)
 })
 </script>
 
 <template>
-  <article class="prose prose-lg max-w-none mx-auto p-6">
-    <h1>{{ meta.title }}</h1>
-    <p class="text-gray-500 text-sm">{{ meta.date }}</p>
-    <div v-html="html"></div>
+  <article class="prose md:max-w-[700px] max-w-[500px] mx-auto my-16 px-4 sm:px-6 lg:px-0">
+    <!-- Title -->
+    <h1 class="font-bold">{{ meta.title || 'Untitled Post' }}</h1>
+
+    <!-- Metadata -->
+    <p class="text-gray-500 text-sm mt-1 ">
+      <span v-if="meta.author">{{$t('by')}} {{ meta.author }}</span>
+      <span v-if="meta.upload"> - {{$t('created')}}: {{ created.toLocaleDateString(locale) }}</span>
+      <span v-if="meta.update"> - {{$t('updated')}}: {{ updated.toLocaleDateString(locale) }}</span>
+    </p>
+
+    <p class="text-gray-500 text-sm mt-1">
+      <em v-if="meta.description">{{ meta.description }}</em>
+    </p>
+
+    <hr/>
+
+    <!-- Markdown content -->
+    <div v-html="html" class="mt-6"></div>
   </article>
 </template>

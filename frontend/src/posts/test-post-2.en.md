@@ -1,5 +1,5 @@
 ---
-title: "Test blog post"
+title: "another test post"
 author: Sean McBroom
 upload: "2025-09-28"
 update: "2025-09-28"

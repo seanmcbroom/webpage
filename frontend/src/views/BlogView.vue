@@ -1,9 +1,9 @@
 <template>
-  <a>{{ $t('blog') }}</a>
-  <div>
-    <ul class="space-y-4">
-      <li v-for="post in posts" :key="post.slug">
+  <div class="flex flex-col my-auto items-center">
+    <ul class="space-y-1">
+      <li v-for="post in posts" :key="post.slug" class="space-x-2">
         <a :href="`/blog/${post.slug}`" target="_blank">{{ post.metadata.title }}</a>
+        <a class="text-gray-500 text-sm">{{ post.metadata.update }}</a>
       </li>
     </ul>
   </div>

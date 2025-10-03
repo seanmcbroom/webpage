@@ -4,8 +4,10 @@
   "age": "年齢",
   "birthday": "お誕生日",
   "blog": "ブログ",
+  "by": "作成者",
   "contact": "連絡",
   "contact-disclaimer": "興味がある申し出にだけ応じます。ありがとう。",
+  "created": "作成日",
   "email": "メール",
   "faq": "F A Q",
   "hello": "こんにちは、世界！",
@@ -18,5 +20,6 @@
   "select": "選ぶ",
   "sourceCode": " ソースコード ",
   "time in wdm": "DES MOINESでの現在時刻：",
+  "updated": "更新日",
   "white-race": "白人"
 }
