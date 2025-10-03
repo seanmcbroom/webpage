@@ -4,12 +4,16 @@ import type { Ref } from 'vue'
 
 const DEFAULT_TITLE = 'SEAN MCBROOM'
 
+function capitalizeFirstLetter(str: string) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 export function useDocumentTitle(titleKey: string | Ref<string> = '') {
   const { t, locale } = useI18n()
 
   const updateTitle = () => {
     const key = unref(titleKey) // unwrap ref if needed
-    document.title = key.length > 0 ? `${t(key)} | ${DEFAULT_TITLE}` : DEFAULT_TITLE
+    document.title = key.length > 0 ? `${capitalizeFirstLetter(t(key))} | ${DEFAULT_TITLE}` : DEFAULT_TITLE
   }
 
   // Initial set
