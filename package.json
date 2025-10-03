@@ -17,8 +17,6 @@
   "scripts": {
     "lint": "npm run lint -ws --if-present",
     "lint:fix": "npm run lint:fix -ws --if-present",
-    "check:types": "npm run check:types -ws --if-present",
-    "analyze:cycles": "npm run analyze:cycles -ws --if-present",
     "test": "npm run test -ws --if-present",
     "dev": "concurrently \"npm run dev -w frontend\" \"npm run dev -w backend\""
   },

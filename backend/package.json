@@ -2,7 +2,6 @@
   "name": "@webpage/backend",
   "author": "Sean McBroom (sean.mcbroom@outlook.com)",
   "version": "1.0.0",
-  "type": "module",
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
