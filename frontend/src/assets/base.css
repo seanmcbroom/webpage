@@ -97,6 +97,12 @@ img {
   user-select: none;
 }
 
+select {
+  background-color: var(--color-background-soft);
+  padding: 4px;
+  border-radius: 4px;
+}
+
 a:link {
   color: var(--color-accent);
   text-decoration: underline;
