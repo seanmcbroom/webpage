@@ -1,9 +1,9 @@
 ---
-title: "Test blog post"
+title: "Test Blog Post"
 author: Sean McBroom
 upload: "2025-09-28"
 update: "2025-09-28"
-description: "Test blog post"
+description: "Test description"
 ---
 
 ## Headings

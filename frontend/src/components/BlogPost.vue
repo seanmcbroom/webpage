@@ -66,9 +66,15 @@ watch([() => locale.value], ([lang]) => {
 
       <!-- Metadata -->
       <p class="text-gray-500 text-sm flex flex-wrap gap-x-2 gap-y-1 mb-2">
-        <span v-if="meta.author">{{ $t('by') }} {{ meta.author }}</span>
-        <span v-if="meta.upload">• {{ $t('created') }}: {{ created.toLocaleDateString(locale) }}</span>
-        <span v-if="meta.update">• {{ $t('updated') }}: {{ updated.toLocaleDateString(locale) }}</span>
+        {{
+          [
+            meta.author ? `${$t('by')} ${meta.author}` : null,
+            meta.upload ? `${$t('created')} ${created.toLocaleDateString(locale)}` : null,
+            meta.update ? `${$t('updated')} ${updated.toLocaleDateString(locale)}` : null
+          ]
+            .filter(Boolean)
+            .join(' • ')
+        }}
       </p>
 
       <!-- Description -->
