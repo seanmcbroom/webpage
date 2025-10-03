@@ -28,11 +28,11 @@
     "@intlify/unplugin-vue-i18n": "6.0.8",
     "@tailwindcss/vite": "^4.1.8",
     "@vueuse/core": "13.3.0",
-    "axios": "1.9.0",
+    "axios": "^1.12.2",
     "defu": "6.1.4",
     "markdown-it": "^14.1.0",
     "vue": "3.5.15",
-    "vue-i18n": "11.1.5",
+    "vue-i18n": "^11.1.12",
     "vue-router": "4.5.1"
   },
   "devDependencies": {
@@ -52,7 +52,7 @@
     "tailwindcss": "^4.1.8",
     "unplugin-vue-components": "28.7.0",
     "url-loader": "4.1.1",
-    "vite": "6.3.5",
+    "vite": "^6.3.6",
     "vite-plugin-vue-devtools": "7.7.6"
   }
 }
