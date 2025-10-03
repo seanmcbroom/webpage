@@ -34,7 +34,7 @@ const router = createRouter({
       component: ContactView
     },
     {
-      path: '/blog/:slug',
+      path: '/posts/:slug',
       component: BlogPost,
       props: true
     }
