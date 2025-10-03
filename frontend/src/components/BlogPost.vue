@@ -58,18 +58,18 @@ watch([() => locale.value], ([lang]) => {
 <template>
   <article class="prose md:max-w-[700px] max-w-[500px] mx-auto my-16 px-4 sm:px-6 lg:px-0">
     <!-- Header -->
-    <header class="mb-8 pb-4 border-b border-gray-200">
+    <header class="border-b border-gray-200 [&>*]:mb-2 [&>*]:mt-0">
       <!-- Title -->
-      <h1 class="font-extrabold text-3xl md:text-4xl leading-tight mb-2">
+      <h1 class="font-extrabold text-3xl md:text-4xl leading-tight">
         {{ meta.title || $t('unavailable-blog-post') }}
       </h1>
 
       <!-- Metadata -->
-      <p class="text-gray-500 text-sm flex flex-wrap gap-x-2 gap-y-1 mb-2">
+      <p class="text-gray-500 text-sm flex flex-wrap gap-x-2 gap-y-1">
         {{
           [
             meta.author ? `${$t('by')} ${meta.author}` : null,
-            meta.upload ? `${$t('created')} ${created.toLocaleDateString(locale)}` : null,
+            meta.upload ? `${$t('uploaded')} ${created.toLocaleDateString(locale)}` : null,
             meta.update ? `${$t('updated')} ${updated.toLocaleDateString(locale)}` : null
           ]
             .filter(Boolean)
@@ -78,17 +78,15 @@ watch([() => locale.value], ([lang]) => {
       </p>
 
       <!-- Description -->
-      <p v-if="meta.description" class="text-gray-600 italic text-sm mb-4">
+      <p v-if="meta.description" class="text-gray-600 italic text-sm">
         {{ meta.description }}
       </p>
 
       <!-- Language selector -->
-      <div class="mb-0">
-        <LanguageSelector />
-      </div>
+      <LanguageSelector />
     </header>
 
     <!-- Markdown content -->
-    <div v-html="html" class="mt-6"></div>
+    <div v-html="html" class="[&>*]:mb-3 [&>*]:mt-3"></div>
   </article>
 </template>
