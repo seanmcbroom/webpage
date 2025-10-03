@@ -28,7 +28,7 @@ app.use((req, res, next) => {
 app.use(express.static(vueBuildPath));
 
 // Serve app for all other requests
-app.use(async (req, res, next) => {
+app.use(async (req, res) => {
 	// Send the index.html file
 	res.sendFile(path.join(vueBuildPath, "index.html"));
 });

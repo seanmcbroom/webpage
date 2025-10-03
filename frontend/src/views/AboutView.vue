@@ -23,7 +23,7 @@ import pfp from '@/assets/images/pfp.webp'
 import { useDocumentTitle } from '@/composables/useDocumentTitle'
 import { useI18n } from 'vue-i18n'
 
-const { t, locale } = useI18n()
+const { $t, locale } = useI18n()
 
 const birthday = new Date('7/11/2004')
 

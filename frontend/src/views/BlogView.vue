@@ -15,12 +15,9 @@ import { useI18n } from 'vue-i18n'
 import { getAllPosts } from '@/utils/blog-posts'
 import { useDocumentTitle } from '@/composables/useDocumentTitle'
 
-const { t, locale } = useI18n()
+const { locale } = useI18n()
 
 const posts = computed(() => getAllPosts(locale.value))
-
-console.log(posts.value.length)
-console.log(posts.value)
 
 useDocumentTitle('blog')
 </script>

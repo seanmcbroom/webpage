@@ -21,7 +21,7 @@
 import { useDocumentTitle } from '@/composables/useDocumentTitle'
 import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n()
+const { $t } = useI18n()
 
 useDocumentTitle('contact')
 </script>

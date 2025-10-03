@@ -33,8 +33,8 @@ export abstract class CommonStore<T extends object> {
     this._internalState = isNil(storage)
       ? (reactive(structuredClone(defaultState)) as T)
       : useStorage(storeKey, structuredClone(defaultState), storage, {
-          mergeDefaults: (storageValue: any, defaults: any) =>
-            mergeExcludingUnknown(storageValue, defaults)
+          mergeDefaults: (storageValue: T, defaults: T) =>
+            mergeExcludingUnknown(storageValue, defaults),
         })
   }
 }
