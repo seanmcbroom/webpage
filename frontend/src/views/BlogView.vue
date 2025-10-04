@@ -3,7 +3,7 @@
     <ul class="space-y-1">
       <li v-for="post in posts" :key="post.slug" class="space-x-2">
         <a :href="`/posts/${post.slug}`" target="_blank">{{ post.metadata.title }}</a>
-        <a class="text-gray-500 text-sm">{{ post.metadata.update }}</a>
+        <a v-if="post.metadata.upload" class="text-gray-500 text-sm">{{ post.metadata.upload }}</a>
       </li>
     </ul>
   </div>
