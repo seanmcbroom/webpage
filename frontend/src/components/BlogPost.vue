@@ -58,7 +58,7 @@ watch([() => locale.value], ([lang]) => {
 <template>
   <article class="prose md:max-w-[700px] max-w-[500px] mx-auto my-10 px-4 sm:px-6 lg:px-0">
     <!-- Header -->
-    <header class="border-b border-gray-200 [&>*]:mb-2 [&>*]:mt-0">
+    <header class="border-b border-gray-200 [&>*]:mb-5 [&>*]:mt-0 mb-5">
       <!-- Title -->
       <h1 class="font-extrabold text-3xl md:text-4xl leading-tight">
         {{ meta.title || $t('unavailable-blog-post') }}
@@ -87,6 +87,6 @@ watch([() => locale.value], ([lang]) => {
     </header>
 
     <!-- Markdown content -->
-    <div v-html="html" class="[&>*]:mb-3 [&>*]:mt-3"></div>
+    <div v-html="html" class="[&>*]:mb-5 [&>*]:mt-5"></div>
   </article>
 </template>
