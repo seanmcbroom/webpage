@@ -12,7 +12,7 @@
   "devDependencies": {
     "@types/cli-color": "2.0.6",
     "@types/express": "5.0.3",
-    "@types/express-session": "1.18.1",
+    "@types/express-session": "1.18.2",
     "@types/http-proxy": "1.17.16",
     "nodemon": "3.1.10",
     "ts-node": "10.9.2",
