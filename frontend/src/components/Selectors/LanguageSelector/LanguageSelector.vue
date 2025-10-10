@@ -15,6 +15,7 @@
     <option
       v-for="(item, index) in i18n.availableLocales"
       :key="index"
+      :aria-label="getLocaleNativeName(item)"
       :selected="item === clientSettings.locale"
       :data-locale="item"
     >
