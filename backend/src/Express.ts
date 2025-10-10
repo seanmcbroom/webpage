@@ -9,7 +9,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const port = 4882;
 const app = express();
 const router = express.Router();
-const vueBuildPath = path.normalize(path.join(__dirname, "dist"));
+const vueBuildPath = path.normalize(path.join(__dirname, "frontend-build"));
 
 // Serve API routes
 app.use(router);
