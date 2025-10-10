@@ -4,17 +4,17 @@
       <img :src="pfp" alt="profile" class="w-[150px] rounded-[10%]" />
 
       <span>
-        {{ $t('about-description') }}
+        {{ t('about-description') }}
       </span>
     </div>
 
     <span class="text-left w-[100%]">
-      <span>{{ $t('birthday') }}: {{ birthday.toLocaleDateString(locale) }}</span>
+      <span>{{ t('birthday') }}: {{ birthday.toLocaleDateString(locale) }}</span>
       <br />
-      <span>{{ $t('age') }}: {{ getYearsSince(birthday) }} </span>
+      <span>{{ t('age') }}: {{ getYearsSince(birthday) }} </span>
     </span>
 
-    <a href="/">{{ $t('home') }}</a>
+    <a href="/">{{ t('home') }}</a>
   </div>
 </template>
 
@@ -23,7 +23,7 @@ import pfp from '@/assets/images/pfp.webp'
 import { useDocumentTitle } from '@/composables/useDocumentTitle'
 import { useI18n } from 'vue-i18n'
 
-const { $t, locale } = useI18n()
+const { t, locale } = useI18n()
 
 const birthday = new Date('7/11/2004')
 
