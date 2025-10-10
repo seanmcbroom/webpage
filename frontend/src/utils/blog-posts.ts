@@ -15,7 +15,7 @@ export interface Post {
 }
 
 // Load all markdown files as raw strings
-export const posts: Record<string, string> = import.meta.glob('../posts/*.md', {
+export const posts: Record<string, string> = import.meta.glob('../assets/posts/*.md', {
   eager: true,
   query: '?raw',
   import: 'default'
