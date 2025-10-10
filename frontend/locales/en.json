@@ -1,13 +1,12 @@
 {
   "about": "about",
-  "about-description": "I am currently pursuing an AAS degree in Computer Information Systems at Des Moines Area       Community College, where I am learning the fundamentals and best practices of computer       science. I'm passionate about the field because of the endless possibilities for innovation       and problem-solving it offers. I'm always eager to learn new programming languages and       technologies, and experiment with new ideas and projects. I am also fluent in English and       studying Japanese, which allows me to communicate with diverse audiences. My ultimate goal is       to make a positive impact on the world through my work. ",
+  "about-description": "I recently earned my AAS degree in Computer Information Systems, building on a passion for programming that started when I was 14. Over the years, I’ve developed a strong foundation in computer science principles and best practices, and I’m constantly exploring new languages, technologies, and ideas. I’m passionate about the endless possibilities for innovation and problem-solving that technology offers. I’m fluent in English and currently passionate in studying Japanese, which helps me connect with diverse audiences. My ultimate goal is to make a positive impact on the world through my work.",
   "age": "age",
   "birthday": "birthday",
   "blog": "blog",
   "by": "by",
   "contact": "contact",
   "contact-disclaimer": "i'll only respond to proposals that are a good match for my schedule and interests. thank you.",
-  "uploaded": "uploaded",
   "email": "email",
   "faq": "faq",
   "github": "github",
@@ -23,5 +22,6 @@
   "time in wdm": "TIME IN DES MOINES",
   "unavailable-blog-post": "This post is unavailable",
   "updated": "updated",
+  "uploaded": "uploaded",
   "white-race": "white"
 }
