@@ -1,12 +1,13 @@
-import './assets/main.css'
+import "./assets/main.css";
 
-import { createApp } from 'vue'
-import { vuePlugin as i18n } from './plugins/i18n'
-import App from './App.vue'
-import router from './router'
+import { createApp } from "vue";
 
-const app = createApp(App)
+import App from "./App.vue";
+import { vuePlugin as i18n } from "./plugins/i18n";
+import router from "./router";
 
-app.use(router)
-app.use(i18n)
-app.mount('#app')
+const app = createApp(App);
+
+app.use(router);
+app.use(i18n);
+app.mount("#app");

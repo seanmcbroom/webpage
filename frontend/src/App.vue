@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
-import { Page } from './components/Layout/Page'
+import { RouterView } from "vue-router";
+
+import { Page } from "./components/Layout/Page";
 </script>
 
 <template>

@@ -40,6 +40,7 @@
     "@tailwindcss/typography": "0.5.19",
     "@tsconfig/node20": "20.1.6",
     "@types/node": "24.6.2",
+    "@typescript-eslint/eslint-plugin": "^8.46.0",
     "@vitejs/plugin-vue": "5.2.4",
     "@vitejs/plugin-vue-jsx": "5.1.1",
     "@vue/eslint-config-typescript": "14.6.0",
@@ -54,6 +55,7 @@
     "url-loader": "4.1.1",
     "vite": "7.1.9",
     "vite-plugin-sitemap": "0.8.2",
-    "vite-plugin-vue-devtools": "8.0.2"
+    "vite-plugin-vue-devtools": "8.0.2",
+    "vue-eslint-parser": "^10.2.0"
   }
 }

@@ -1,1 +1,1 @@
-export { default as LanguageSelector } from './LanguageSelector.vue'
+export { default as LanguageSelector } from "./LanguageSelector.vue";

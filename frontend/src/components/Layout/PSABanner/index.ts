@@ -1,1 +1,1 @@
-export {default as PSABanner} from "./PSABanner.vue"
+export { default as PSABanner } from "./PSABanner.vue";

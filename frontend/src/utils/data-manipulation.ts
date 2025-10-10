@@ -1,4 +1,4 @@
-import { defu } from 'defu'
+import { defu } from "defu";
 
 /**
  * Merge 2 objects, excluding the keys from the destination that are not present in source
@@ -9,23 +9,25 @@ import { defu } from 'defu'
  */
 export function mergeExcludingUnknown<T extends object, K extends keyof T>(
   object: T,
-  defaultObject: T
+  defaultObject: T,
 ): T {
-  const defaultKeys = new Set(Object.keys(defaultObject) as K[])
-  const missingKeys = (Object.keys(object) as K[]).filter((key) => !defaultKeys.has(key))
+  const defaultKeys = new Set(Object.keys(defaultObject) as K[]);
+  const missingKeys = (Object.keys(object) as K[]).filter(
+    (key) => !defaultKeys.has(key),
+  );
 
-  object = defu(object, defaultObject)
+  object = defu(object, defaultObject);
 
   for (const key of missingKeys) {
-    delete object[key]
+    delete object[key];
   }
 
-  return object
+  return object;
 }
 
 /**
  * Uppercase the first letter of a string
  */
 export function upperFirst<T extends string>(str: T): Capitalize<T> {
-  return (str[0].toUpperCase() + str.slice(1)) as Capitalize<T>
+  return (str[0].toUpperCase() + str.slice(1)) as Capitalize<T>;
 }

@@ -3,25 +3,30 @@
     <div class="flex flex-col items-center">
       <ul class="space-y-1">
         <li v-for="post in posts" :key="post.slug" class="space-x-2">
-          <a :href="`/posts/${post.slug}`" target="_blank">{{ post.metadata.title }}</a>
-          <a v-if="post.metadata.upload" class="text-gray-500 text-sm">{{ new Date(post.metadata.upload).toLocaleDateString(locale) }}</a>
+          <a :href="`/posts/${post.slug}`" target="_blank">{{
+            post.metadata.title
+          }}</a>
+          <a v-if="post.metadata.upload" class="text-gray-500 text-sm">{{
+            new Date(post.metadata.upload).toLocaleDateString(locale)
+          }}</a>
         </li>
       </ul>
     </div>
 
-    <a href="/">{{ t('home') }}</a>
+    <a href="/">{{ t("home") }}</a>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { getAllPosts } from '@/utils/blog-posts'
-import { useDocumentTitle } from '@/composables/useDocumentTitle'
+import { computed } from "vue";
+import { useI18n } from "vue-i18n";
 
-const { t, locale } = useI18n()
+import { useDocumentTitle } from "@/composables/useDocumentTitle";
+import { getAllPosts } from "@/utils/blog-posts";
 
-const posts = computed(() => getAllPosts(locale.value))
+const { t, locale } = useI18n();
 
-useDocumentTitle('blog')
+const posts = computed(() => getAllPosts(locale.value));
+
+useDocumentTitle("blog");
 </script>

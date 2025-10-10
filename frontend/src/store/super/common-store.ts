@@ -1,33 +1,40 @@
-import { useStorage, type RemovableRef } from '@vueuse/core'
-import { isRef, reactive } from 'vue'
-import { mergeExcludingUnknown } from '@/utils/data-manipulation'
-import { isNil } from '@/utils/validation'
+import { useStorage, type RemovableRef } from "@vueuse/core";
+import { isRef, reactive } from "vue";
 
-export type Persistence = 'localStorage' | 'sessionStorage'
+import { mergeExcludingUnknown } from "@/utils/data-manipulation";
+import { isNil } from "@/utils/validation";
+
+export type Persistence = "localStorage" | "sessionStorage";
 
 export abstract class CommonStore<T extends object> {
-  protected readonly _storeKey: string
-  private readonly _defaultState: T
-  private readonly _internalState: T | RemovableRef<T>
+  protected readonly _storeKey: string;
+  private readonly _defaultState: T;
+  private readonly _internalState: T | RemovableRef<T>;
 
   protected get _state(): T {
-    return isRef(this._internalState) ? this._internalState.value : this._internalState
+    return isRef(this._internalState)
+      ? this._internalState.value
+      : this._internalState;
   }
 
   protected readonly _reset = (): void => {
-    Object.assign(this._state, this._defaultState)
-  }
+    Object.assign(this._state, this._defaultState);
+  };
 
-  protected constructor(storeKey: string, defaultState: T, persistence?: Persistence) {
-    this._storeKey = storeKey
-    this._defaultState = defaultState
+  protected constructor(
+    storeKey: string,
+    defaultState: T,
+    persistence?: Persistence,
+  ) {
+    this._storeKey = storeKey;
+    this._defaultState = defaultState;
 
-    let storage
+    let storage;
 
-    if (persistence === 'localStorage') {
-      storage = window.localStorage
-    } else if (persistence === 'sessionStorage') {
-      storage = sessionStorage
+    if (persistence === "localStorage") {
+      storage = window.localStorage;
+    } else if (persistence === "sessionStorage") {
+      storage = sessionStorage;
     }
 
     this._internalState = isNil(storage)
@@ -35,6 +42,6 @@ export abstract class CommonStore<T extends object> {
       : useStorage(storeKey, structuredClone(defaultState), storage, {
           mergeDefaults: (storageValue: T, defaults: T) =>
             mergeExcludingUnknown(storageValue, defaults),
-        })
+        });
   }
 }
