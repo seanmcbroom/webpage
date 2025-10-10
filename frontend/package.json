@@ -39,6 +39,7 @@
     "@tailwindcss/postcss": "4.1.14",
     "@tailwindcss/typography": "0.5.19",
     "@tsconfig/node20": "20.1.6",
+    "@types/markdown-it": "^14.1.2",
     "@types/node": "24.6.2",
     "@typescript-eslint/eslint-plugin": "^8.46.0",
     "@vitejs/plugin-vue": "5.2.4",

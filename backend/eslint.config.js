@@ -4,10 +4,6 @@ import eslintPluginPrettier from 'eslint-plugin-prettier';
 import eslintPluginImport from 'eslint-plugin-import';
 import eslintPluginUnusedImports from 'eslint-plugin-unused-imports';
 import tseslint from 'typescript-eslint';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -20,7 +16,6 @@ export default [
       parser: tsParser,
       parserOptions: {
         project: './tsconfig.json',
-        tsconfigRootDir: __dirname,
       },
     },
     plugins: {
@@ -75,6 +70,21 @@ export default [
             order: 'asc',
             caseInsensitive: true,
           },
+        },
+      ],
+
+      'import/extensions': [
+        'error',
+        'ignorePackages',
+        {
+          js: 'always',
+          ts: 'never',
+        },
+      ],
+      'import/no-unresolved': [
+        'error',
+        {
+          ignore: ['\\.js$', '\\.json$'],
         },
       ],
 

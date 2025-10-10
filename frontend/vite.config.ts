@@ -13,7 +13,7 @@ import Components from "unplugin-vue-components/vite";
 import { defineConfig } from "vite";
 import Sitemap from "vite-plugin-sitemap";
 
-import { routes } from "./src/router/routes";
+import { routes } from "./src/router/routes.js";
 
 // https://vitejs.dev/config/
 export default defineConfig({

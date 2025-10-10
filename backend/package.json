@@ -2,11 +2,17 @@
   "name": "@webpage/backend",
   "author": "Sean McBroom (sean.mcbroom@outlook.com)",
   "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.11.0 <23.0.0",
+    "npm": ">=10.9.0",
+    "yarn": "yarn is not supported. Please use npm"
+  },
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "dev": "nodemon src/index.ts",
-    "start": "tsx src/index.ts",
+    "dev": "nodemon --watch \"src/**\" --ext \"ts,json\" --ignore \"src/**/*.spec.ts\" --exec \"tsx src/index.ts\"",
+    "start": "tsc && node dist/index.js",
     "clean": "git clean -fxd"
   },
   "devDependencies": {
