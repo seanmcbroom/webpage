@@ -12,6 +12,8 @@ import {
 } from 'unplugin-vue-components/resolvers'
 import tailwindcss from '@tailwindcss/vite';
 import Components from 'unplugin-vue-components/vite'
+import Sitemap from 'vite-plugin-sitemap'
+import { routes } from './src/router/routes'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -30,6 +32,11 @@ export default defineConfig({
     Components({
       dts: './types/components.d.ts',
       resolvers: [Vuetify3Resolver(), VueUseComponentsResolver(), VueUseDirectiveResolver()]
+    }),
+    Sitemap({
+      hostname: "https://seanmcbroom.com",
+      dynamicRoutes: routes.map(r => r.path),
+      readable: true,
     })
   ],
   resolve: {
