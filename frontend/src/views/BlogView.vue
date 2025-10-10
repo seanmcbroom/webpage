@@ -4,7 +4,7 @@
       <ul class="space-y-1">
         <li v-for="post in posts" :key="post.slug" class="space-x-2">
           <a :href="`/posts/${post.slug}`" target="_blank">{{ post.metadata.title }}</a>
-          <a v-if="post.metadata.upload" class="text-gray-500 text-sm">{{ post.metadata.upload }}</a>
+          <a v-if="post.metadata.upload" class="text-gray-500 text-sm">{{ new Date(post.metadata.upload).toLocaleDateString(locale) }}</a>
         </li>
       </ul>
     </div>
