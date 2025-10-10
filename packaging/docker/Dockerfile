@@ -18,7 +18,7 @@ WORKDIR /app/backend
 RUN npm ci
 
 # Copy the frontend build to serve on the backend
-COPY --from=frontend /app/frontend/dist /app/backend/src/dist
+COPY --from=frontend /app/frontend/dist /app/backend/dist/src/dist
 
 EXPOSE 4882
 CMD ["npm", "run", "start"]
