@@ -19,3 +19,10 @@ export function getLocaleName(
 export function getLocaleNativeName(code: string): string | undefined {
   return getLocaleName(code, code);
 }
+
+/**
+ * Given a locale only return the first 2 letters (i.e. en-US -> en)
+ */
+export function getLocaleShort(code: string): string {
+  return code.split("-")[0];
+}

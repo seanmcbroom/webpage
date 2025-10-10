@@ -23,10 +23,11 @@ import { useI18n } from "vue-i18n";
 
 import { useDocumentTitle } from "@/composables/useDocumentTitle";
 import { getAllPosts } from "@/utils/blog-posts";
+import { getLocaleShort } from "@/utils/i18n";
 
 const { t, locale } = useI18n();
 
-const posts = computed(() => getAllPosts(locale.value));
+const posts = computed(() => getAllPosts(getLocaleShort(locale.value)));
 
 useDocumentTitle("blog");
 </script>
