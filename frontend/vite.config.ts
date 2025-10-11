@@ -14,6 +14,7 @@ import { defineConfig } from "vite";
 import Sitemap from "vite-plugin-sitemap";
 
 import { routes } from "./src/router/routes.js";
+import { getBlogRoutes } from "./scripts/getBlogRoutes.js";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -39,7 +40,7 @@ export default defineConfig({
     }),
     Sitemap({
       hostname: "https://seanmcbroom.com",
-      dynamicRoutes: routes.map((r) => r.path),
+      dynamicRoutes: [...routes.map((r) => r.path), ...getBlogRoutes()],
       readable: true,
     }),
   ],
