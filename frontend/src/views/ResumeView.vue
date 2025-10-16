@@ -17,7 +17,7 @@ import { useMeta } from "@/composables/useMeta";
 const { t } = useI18n();
 
 useMeta({
-  title: t("resume"),
-  description: t("resume-meta-description"),
+  title: () => t("resume"),
+  description: () => t("resume-meta-description"),
 });
 </script>

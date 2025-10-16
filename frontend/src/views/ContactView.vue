@@ -31,7 +31,7 @@ import { useMeta } from "@/composables/useMeta";
 const { t } = useI18n();
 
 useMeta({
-  title: t("contact"),
-  description: t("contact-meta-description"),
+  title: () => t("contact"),
+  description: () => t("contact-meta-description"),
 });
 </script>

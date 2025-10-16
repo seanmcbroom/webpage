@@ -33,8 +33,8 @@ const { t, locale } = useI18n();
 const birthday = new Date("7/11/2004");
 
 useMeta({
-  title: t("about"),
-  description: t("about-meta-description"),
+  title: () => t("about"),
+  description: () => t("about-meta-description"),
 });
 
 const getYearsSince = (dateOfBirth: Date, dateToCalculate = new Date()) => {

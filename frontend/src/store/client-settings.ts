@@ -1,5 +1,5 @@
 import { useNavigatorLanguage, watchImmediate } from "@vueuse/core";
-import { computed } from "vue";
+import { computed, watchEffect } from "vue";
 
 import { CommonStore } from "./super/common-store";
 
@@ -58,10 +58,9 @@ class ClientSettingsStore extends CommonStore<ClientSettingsState> {
     /**
      * Locale change
      */
-    watchImmediate(
-      [this._BROWSER_LANGUAGE, (): typeof this.locale => this.locale],
-      this._updateLocale,
-    );
+    watchEffect(() => {
+      this._updateLocale();
+    });
   }
 }
 

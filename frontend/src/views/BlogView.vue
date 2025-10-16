@@ -30,7 +30,7 @@ const { t, locale } = useI18n();
 const posts = computed(() => getAllPosts(getLocaleShort(locale.value)));
 
 useMeta({
-  title: t("blog"),
-  description: t("blog-meta-description"),
+  title: () => t("blog"),
+  description: () => t("blog-meta-description"),
 });
 </script>

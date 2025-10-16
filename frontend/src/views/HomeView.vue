@@ -32,8 +32,8 @@ import { useMeta } from "@/composables/useMeta";
 const { t, locale } = useI18n();
 
 useMeta({
-  title: t("home"),
-  description: t("home-meta-description"),
+  title: () => t("home"),
+  description: () => t("home-meta-description"),
 });
 
 interface Link {
@@ -48,7 +48,7 @@ const links = ref<Link[]>([]);
 const updateLinks = () => {
   links.value = [
     { text: t("about"), href: "about", target: "_self" },
-    { text: t("blog"), href: "blog" },
+    { text: t("blog"), href: "blog", target: "_self" },
     { text: t("resume"), href: "resume", target: "_blank" },
     { text: t("contact"), href: "contact", target: "_self" },
     {

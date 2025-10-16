@@ -1,19 +1,15 @@
 import { createRouter, createWebHistory } from "vue-router";
-
 import { routes } from "./routes.js";
 import type { Component } from "vue";
 
-// Lazy-load components
-const HomeView = () => import("../views/HomeView.vue");
-const AboutView = () => import("../views/AboutView.vue");
-const BlogView = () => import("../views/BlogView.vue");
-const ResumeView = () => import("../views/ResumeView.vue");
-const ContactView = () => import("../views/ContactView.vue");
-const BlogPost = () => import("../components/BlogPost.vue");
+import HomeView from "../views/HomeView.vue";
+import AboutView from "../views/AboutView.vue";
+import BlogView from "../views/BlogView.vue";
+import ResumeView from "../views/ResumeView.vue";
+import ContactView from "../views/ContactView.vue";
+import BlogPost from "../components/BlogPost.vue";
 
-type AsyncVueComponent = () => Promise<{ default: Component }>;
-
-const routeMap: Record<string, AsyncVueComponent> = {
+const routeMap: Record<string, Component> = {
   "/": HomeView,
   "/about": AboutView,
   "/blog": BlogView,

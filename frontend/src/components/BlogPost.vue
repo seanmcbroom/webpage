@@ -15,10 +15,11 @@ const created = ref(new Date());
 const updated = ref(new Date());
 const meta = ref<Record<string, string>>({});
 const title = ref("");
+const description = ref("");
 
 useMeta({
-  title: meta.value.title,
-  description: meta.value.description,
+  title: title,
+  description: description,
 });
 
 // Function to load Markdown for a given slug + locale
@@ -53,6 +54,7 @@ const loadMarkdown = (slug: string, lang: string) => {
   created.value = new Date(meta.value.upload);
   updated.value = new Date(meta.value.update);
   title.value = meta.value.title;
+  description.value = meta.value.description;
 };
 
 // Watch both slug and locale
