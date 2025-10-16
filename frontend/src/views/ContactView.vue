@@ -26,9 +26,12 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 
-import { useDocumentTitle } from "@/composables/useDocumentTitle";
+import { useMeta } from "@/composables/useMeta";
 
 const { t } = useI18n();
 
-useDocumentTitle("contact");
+useMeta({
+  title: t("contact"),
+  description: t("contact-meta-description"),
+});
 </script>

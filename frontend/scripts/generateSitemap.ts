@@ -12,7 +12,6 @@ function generateSitemap() {
     .filter((r) => !r.dynamic)
     .map((r) => ({
       url: `${hostname}${r.path}`,
-      description: r.description,
       changefreq: "monthly",
       priority: r.path === "/" ? "1.0" : "0.7",
       lastmod: new Date().toISOString(),
@@ -28,7 +27,6 @@ function generateSitemap() {
 
     return {
       url: `${hostname}/${b.slug}`,
-      description: b.description,
       changefreq: "weekly",
       priority: "0.6",
       lastmod,
@@ -47,7 +45,6 @@ ${allRoutes
     <lastmod>${r.lastmod}</lastmod>
     <changefreq>${r.changefreq}</changefreq>
     <priority>${r.priority}</priority>
-    ${r.description ? `<description>${escapeXml(r.description)}</description>` : ""}
   </url>`,
   )
   .join("")}
@@ -68,23 +65,6 @@ Sitemap: ${hostname}/sitemap.xml
   const robotsPath = path.join(distDir, "robots.txt");
   fs.writeFileSync(robotsPath, robotsTxt, "utf-8");
   console.log(`✅ robots.txt generated at ${robotsPath}`);
-}
-
-function escapeXml(unsafe) {
-  return unsafe.replace(/[<>&'"]/g, (c) => {
-    switch (c) {
-      case "<":
-        return "&lt;";
-      case ">":
-        return "&gt;";
-      case "&":
-        return "&amp;";
-      case "'":
-        return "&apos;";
-      case '"':
-        return "&quot;";
-    }
-  });
 }
 
 function main() {

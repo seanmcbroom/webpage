@@ -37,9 +37,8 @@ jobs:
       - name: Wait for site to deploy
         run: sleep 180
 
-      - name: Ping search engines for sitemap indexing
+      - name: Ping for sitemap indexing (Bing only)
         run: |
           SITEMAP_URL="https://seanmcbroom.com/sitemap.xml"
-          echo "Pinging Google and Bing with $SITEMAP_URL ..."
-          curl -s "https://www.google.com/ping?sitemap=${SITEMAP_URL}" || true
+          echo "Pinging Bing with $SITEMAP_URL ..."
           curl -s "https://www.bing.com/ping?sitemap=${SITEMAP_URL}" || true

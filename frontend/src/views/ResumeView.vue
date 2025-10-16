@@ -9,8 +9,15 @@
 </template>
 
 <script setup lang="ts">
-import resume from "@/assets/files/Sean McBroom Resume 2025Q3.pdf";
-import { useDocumentTitle } from "@/composables/useDocumentTitle";
+import { useI18n } from "vue-i18n";
 
-useDocumentTitle("resume");
+import resume from "@/assets/files/Sean McBroom Resume 2025Q3.pdf";
+import { useMeta } from "@/composables/useMeta";
+
+const { t } = useI18n();
+
+useMeta({
+  title: t("resume"),
+  description: t("resume-meta-description"),
+});
 </script>

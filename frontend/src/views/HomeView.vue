@@ -27,11 +27,14 @@ import { ref, watch, watchEffect } from "vue";
 import { useI18n } from "vue-i18n";
 
 import gunflint from "@/assets/images/gunflint.webp";
-import { useDocumentTitle } from "@/composables/useDocumentTitle";
+import { useMeta } from "@/composables/useMeta";
 
 const { t, locale } = useI18n();
 
-useDocumentTitle();
+useMeta({
+  title: t("home"),
+  description: t("home-meta-description"),
+});
 
 interface Link {
   text: string;

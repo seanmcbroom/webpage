@@ -4,7 +4,7 @@ import { ref, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { useRoute } from "vue-router";
 
-import { useDocumentTitle } from "@/composables/useDocumentTitle";
+import { useMeta } from "@/composables/useMeta";
 import { posts } from "@/utils/blog-posts";
 
 const route = useRoute();
@@ -16,8 +16,10 @@ const updated = ref(new Date());
 const meta = ref<Record<string, string>>({});
 const title = ref("");
 
-// Call composable at top level
-useDocumentTitle(title);
+useMeta({
+  title: meta.value.title,
+  description: meta.value.description,
+});
 
 // Function to load Markdown for a given slug + locale
 const loadMarkdown = (slug: string, lang: string) => {

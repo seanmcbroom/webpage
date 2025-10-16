@@ -21,7 +21,7 @@
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 
-import { useDocumentTitle } from "@/composables/useDocumentTitle";
+import { useMeta } from "@/composables/useMeta";
 import { getAllPosts } from "@/utils/blog-posts";
 import { getLocaleShort } from "@/utils/i18n";
 
@@ -29,5 +29,8 @@ const { t, locale } = useI18n();
 
 const posts = computed(() => getAllPosts(getLocaleShort(locale.value)));
 
-useDocumentTitle("blog");
+useMeta({
+  title: t("blog"),
+  description: t("blog-meta-description"),
+});
 </script>

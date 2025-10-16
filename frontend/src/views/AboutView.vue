@@ -26,13 +26,16 @@
 import { useI18n } from "vue-i18n";
 
 import pfp from "@/assets/images/pfp.webp";
-import { useDocumentTitle } from "@/composables/useDocumentTitle";
+import { useMeta } from "@/composables/useMeta";
 
 const { t, locale } = useI18n();
 
 const birthday = new Date("7/11/2004");
 
-useDocumentTitle("about");
+useMeta({
+  title: t("about"),
+  description: t("about-meta-description"),
+});
 
 const getYearsSince = (dateOfBirth: Date, dateToCalculate = new Date()) => {
   const dob = new Date(dateOfBirth).getTime();
