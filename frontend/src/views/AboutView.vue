@@ -4,8 +4,8 @@
   >
     <div class="flex flex-col items-center md:space-x-5 md:flex-row">
       <img
-        :src="pfp.src"
-        :srcset="pfp.srcset"
+        :src="pfp[0].src"
+        :srcset="pfpSrcSet"
         sizes="(max-width: 150px) 100, 50px"
         class="md:w-[150px] rounded-[10%]"
         alt="Profile Picture"
@@ -35,6 +35,10 @@ import pfp from "@/assets/images/pfp.jpg?w=150;100;50&format=webp";
 import { useMeta } from "@/composables/useMeta";
 
 const { t, locale } = useI18n();
+
+const pfpSrcSet = pfp
+  .map((i: ImageMetadata) => `${i.src} ${i.width}w`)
+  .join(", ");
 
 const birthday = new Date("7/11/2004");
 

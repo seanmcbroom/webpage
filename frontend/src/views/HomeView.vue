@@ -5,8 +5,8 @@
     </span>
 
     <img
-      :src="gunflint.src"
-      :srcset="gunflint.srcset"
+      :src="gunflint[0].src"
+      :srcset="gunflintSrcSet"
       sizes="(max-width: 768px) 300px, 500px"
       class="md:w-[500px] w-[300px] h-auto"
       alt="Gunflint"
@@ -29,6 +29,7 @@
 </template>
 
 <script setup lang="ts">
+import type { ImageMetadata } from "vite-imagetools";
 import { ref, watch, watchEffect } from "vue";
 import { useI18n } from "vue-i18n";
 
@@ -36,6 +37,10 @@ import gunflint from "@/assets/images/gunflint.jpg?w=300;500;700&format=webp";
 import { useMeta } from "@/composables/useMeta";
 
 const { t, locale } = useI18n();
+
+const gunflintSrcSet = gunflint
+  .map((i: ImageMetadata) => `${i.src} ${i.width}w`)
+  .join(", ");
 
 useMeta({
   title: () => t("home"),
