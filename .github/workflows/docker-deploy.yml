@@ -33,3 +33,13 @@ jobs:
           file: packaging/docker/Dockerfile 
           push: true
           tags: seanmcbroom/webpage:latest
+
+      - name: Wait for site to deploy
+        run: sleep 180
+
+      - name: Ping search engines for sitemap indexing
+        run: |
+          SITEMAP_URL="https://seanmcbroom.com/sitemap.xml"
+          echo "Pinging Google and Bing with $SITEMAP_URL ..."
+          curl -s "https://www.google.com/ping?sitemap=${SITEMAP_URL}" || true
+          curl -s "https://www.bing.com/ping?sitemap=${SITEMAP_URL}" || true

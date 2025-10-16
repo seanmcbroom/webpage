@@ -15,7 +15,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "lint:inspect": "eslint-config-inspector",
-    "build": "vite build",
+    "build": "vite build && tsx scripts/generateSitemap.ts",
     "check": "npm run lint && npm run check:types",
     "check:types": "vue-tsc",
     "start": "vite",
@@ -49,13 +49,13 @@
     "autoprefixer": "10.4.21",
     "file-loader": "6.2.0",
     "globals": "16.4.0",
+    "gray-matter": "4.0.3",
     "npm-run-all2": "8.0.4",
     "prettier": "3.6.2",
     "tailwindcss": "4.1.14",
     "unplugin-vue-components": "29.1.0",
     "url-loader": "4.1.1",
     "vite": "7.1.9",
-    "vite-plugin-sitemap": "0.8.2",
     "vite-plugin-vue-devtools": "8.0.2",
     "vue-eslint-parser": "^10.2.0"
   }
