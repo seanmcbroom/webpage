@@ -3,7 +3,13 @@
     class="flex flex-col my-auto max-w-[700px] items-center space-y-3 mx-5 md:space-x-5"
   >
     <div class="flex flex-col items-center md:space-x-5 md:flex-row">
-      <img :src="pfp" alt="profile" class="w-[150px] rounded-[10%]" />
+      <img
+        :src="pfp.src"
+        :srcset="pfp.srcset"
+        sizes="(max-width: 150px) 100, 50px"
+        class="md:w-[150px] rounded-[10%]"
+        alt="Profile Picture"
+      />
 
       <span>
         {{ t("about-description") }}
@@ -25,7 +31,7 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 
-import pfp from "@/assets/images/pfp.webp";
+import pfp from "@/assets/images/pfp.jpg?w=150;100;50&format=webp";
 import { useMeta } from "@/composables/useMeta";
 
 const { t, locale } = useI18n();

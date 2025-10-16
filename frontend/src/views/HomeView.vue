@@ -4,7 +4,13 @@
       SEAN MCBROOM
     </span>
 
-    <img :src="gunflint" class="md:w-[500px] w-[300px] h-auto" alt="" />
+    <img
+      :src="gunflint.src"
+      :srcset="gunflint.srcset"
+      sizes="(max-width: 768px) 300px, 500px"
+      class="md:w-[500px] w-[300px] h-auto"
+      alt="Gunflint"
+    />
 
     <span class="text-lg font-600 text-center">
       {{ $t("time in wdm") }}{{ $i18n.locale === "ja" ? "" : " "
@@ -26,7 +32,7 @@
 import { ref, watch, watchEffect } from "vue";
 import { useI18n } from "vue-i18n";
 
-import gunflint from "@/assets/images/gunflint.webp";
+import gunflint from "@/assets/images/gunflint.jpg?w=300;500;700&format=webp";
 import { useMeta } from "@/composables/useMeta";
 
 const { t, locale } = useI18n();
