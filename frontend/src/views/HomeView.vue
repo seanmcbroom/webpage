@@ -5,6 +5,7 @@
     </span>
 
     <ResponsiveImage
+      :srcAvif="gunflintAvif"
       :srcWebp="gunflintWebp"
       :srcFallback="gunflintFallback"
       alt="Gunlint Lake"
@@ -37,6 +38,7 @@ import { ref, watch, watchEffect } from "vue";
 import { useI18n } from "vue-i18n";
 
 import gunflintFallback from "@/assets/images/gunflint.jpg?w=300&as=url";
+import gunflintAvif from "@/assets/images/gunflint.jpg?w=300;500&format=avif&as=srcset";
 import gunflintWebp from "@/assets/images/gunflint.jpg?w=300;500&format=webp&as=srcset";
 import { useMeta } from "@/composables/useMeta";
 

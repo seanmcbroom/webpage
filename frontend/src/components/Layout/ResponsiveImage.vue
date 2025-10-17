@@ -27,6 +27,7 @@ const sizes = computed(() => {
     <source v-if="srcWebp" :srcset="srcWebp" type="image/webp" :sizes="sizes" />
     <img
       :src="srcFallback"
+      :sizes="sizes"
       :alt="alt"
       :loading="loading || 'lazy'"
       :class="styles"
