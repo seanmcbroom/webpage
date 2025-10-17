@@ -1,23 +1,23 @@
 <template>
+  <label id="language-desc" for="language" class="sr-only"
+    >Select Language</label
+  >
   <select
     id="language"
+    aria-labelledby="language-desc"
+    v-model="clientSettings.locale"
     @change="
-      (event) => {
+      (event: Event) => {
         const target = event.target as HTMLSelectElement;
-        const selectedLocaleValue = target.selectedOptions[0].dataset.locale;
-
-        if (selectedLocaleValue) {
-          clientSettings.locale = selectedLocaleValue;
-        }
+        const selectedLocale = target.value;
+        clientSettings.locale = selectedLocale;
       }
     "
   >
     <option
       v-for="(item, index) in i18n.availableLocales"
       :key="index"
-      :aria-label="getLocaleNativeName(item)"
-      :selected="item === clientSettings.locale"
-      :data-locale="item"
+      :value="item"
     >
       {{ getLocaleNativeName(item) }}
     </option>
