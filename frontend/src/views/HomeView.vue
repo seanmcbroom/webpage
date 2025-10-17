@@ -9,7 +9,7 @@
       :srcFallback="gunflintFallback"
       alt="Gunlint Lake"
       :breakpoints="[
-        { maxWidth: 640, size: 150 },
+        { maxWidth: 640, size: 200 },
         { maxWidth: 768, size: 300 },
         { maxWidth: 1024, size: 500 },
       ]"
@@ -37,7 +37,7 @@
 import { ref, watch, watchEffect } from "vue";
 import { useI18n } from "vue-i18n";
 
-import gunflintWebp from "@/assets/images/gunflint.jpg?w=150;300;500&format=webp&as=srcset";
+import gunflintWebp from "@/assets/images/gunflint.jpg?w=200;300;500&format=webp&as=srcset";
 import gunflintFallback from "@/assets/images/gunflint.jpg?w=300&as=url";
 import { useMeta } from "@/composables/useMeta";
 
