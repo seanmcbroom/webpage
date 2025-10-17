@@ -4,12 +4,17 @@
       SEAN MCBROOM
     </span>
 
-    <img
-      :src="gunflint[0].src"
-      :srcset="gunflintSrcSet"
-      sizes="(max-width: 768px) 300px, 500px"
-      class="md:w-[500px] w-[300px] h-auto"
-      alt="Gunflint"
+    <ResponsiveImage
+      :srcWebp="gunflintWebp"
+      :srcFallback="gunflintFallback"
+      alt="Gunlint Lake"
+      :breakpoints="[
+        { maxWidth: 640, size: 150 },
+        { maxWidth: 768, size: 300 },
+        { maxWidth: 1024, size: 500 },
+      ]"
+      styles="w-auto max-w-[500px]"
+      loading="eager"
     />
 
     <span class="text-lg font-600 text-center">
@@ -29,18 +34,14 @@
 </template>
 
 <script setup lang="ts">
-import type { ImageMetadata } from "vite-imagetools";
 import { ref, watch, watchEffect } from "vue";
 import { useI18n } from "vue-i18n";
 
-import gunflint from "@/assets/images/gunflint.jpg?w=300;500;700&format=webp";
+import gunflintWebp from "@/assets/images/gunflint.jpg?w=150;300;500&format=webp&as=srcset";
+import gunflintFallback from "@/assets/images/gunflint.jpg?w=300&as=url";
 import { useMeta } from "@/composables/useMeta";
 
 const { t, locale } = useI18n();
-
-const gunflintSrcSet = gunflint
-  .map((i: ImageMetadata) => `${i.src} ${i.width}w`)
-  .join(", ");
 
 useMeta({
   title: () => t("home"),

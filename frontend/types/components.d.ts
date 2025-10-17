@@ -13,6 +13,7 @@ declare module 'vue' {
     Page: typeof import('./../src/components/Layout/Page/Page.vue')['default']
     PageSuspense: typeof import('./../src/components/PageSuspense.vue')['default']
     PSABanner: typeof import('./../src/components/Layout/PSABanner/PSABanner.vue')['default']
+    ResponsiveImage: typeof import('./../src/components/Layout/ResponsiveImage.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

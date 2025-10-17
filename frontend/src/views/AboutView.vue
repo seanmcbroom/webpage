@@ -2,16 +2,21 @@
   <div
     class="flex flex-col my-auto max-w-[700px] items-center space-y-3 mx-5 md:space-x-5"
   >
-    <div class="flex flex-col items-center md:space-x-5 md:flex-row">
-      <img
-        :src="pfp[0].src"
-        :srcset="pfpSrcSet"
-        sizes="(max-width: 150px) 100, 50px"
-        class="md:w-[150px] rounded-[10%]"
+    <div class="flex flex-col items-center md:space-x-5 md:flex-row space-y-3">
+      <ResponsiveImage
+        :srcWebp="pfpWebp"
+        :srcFallback="pfpFallback"
         alt="Profile Picture"
+        :breakpoints="[
+          { maxWidth: 640, size: 100 },
+          { maxWidth: 768, size: 150 },
+          { maxWidth: 1024, size: 200 },
+        ]"
+        styles="w-auto max-w-[200px] rounded-[10%]"
+        loading="eager"
       />
 
-      <span>
+      <span class="flex-1">
         {{ t("about-description") }}
       </span>
     </div>
@@ -31,14 +36,11 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 
-import pfp from "@/assets/images/pfp.jpg?w=150;100;50&format=webp";
+import pfpFallback from "@/assets/images/pfp.jpg?w=150&as=url";
+import pfpWebp from "@/assets/images/pfp.jpg?w=250;200;150&format=webp&as=srcset";
 import { useMeta } from "@/composables/useMeta";
 
 const { t, locale } = useI18n();
-
-const pfpSrcSet = pfp
-  .map((i: ImageMetadata) => `${i.src} ${i.width}w`)
-  .join(", ");
 
 const birthday = new Date("7/11/2004");
 
