@@ -19,7 +19,7 @@
     "@types/cli-color": "2.0.6",
     "@types/express": "5.0.5",
     "@types/express-session": "1.18.2",
-    "@types/http-proxy": "1.17.16",
+    "@types/http-proxy": "1.17.17",
     "nodemon": "3.1.10",
     "ts-node": "10.9.2",
     "tsx": "4.20.6",
