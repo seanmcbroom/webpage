@@ -54,7 +54,7 @@
     "tailwindcss": "4.1.17",
     "unplugin-vue-components": "30.0.0",
     "url-loader": "4.1.1",
-    "vite": "7.2.4",
+    "vite": "7.3.0",
     "vite-imagetools": "^9.0.2",
     "vite-plugin-vue-devtools": "8.0.5",
     "vue-eslint-parser": "^10.2.0"
