@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "engines": {
-    "node": ">=22.11.0 <23.0.0",
+    "node": ">=22.11.0",
     "npm": ">=10.9.0",
     "yarn": "yarn is not supported. Please use npm"
   },
