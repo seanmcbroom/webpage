@@ -23,17 +23,16 @@ The tool I found that works well for generating subs is [Whisper](https://github
 Whisper is available in multiple model sizes, each trading speed for accuracy:
 
 - **tiny / base** – Very fast, but noticeably less accurate  
-- **small** – A reasonable balance for weaker hardware  
+- **small** – A reasonable balance for weaker hardware
 - **medium** – Good accuracy, slower processing  
 - **large** – Best accuracy, but very demanding on hardware  
 
-For anime and movies, I strongly recommend using at least the **medium** model if your GPU can handle it. The **large** model performs best, but older GPUs may struggle or run out of VRAM.
-
 In terms of hardware, a 20- or 30-series NVIDIA GPU is ideal, though it *is* possible to run Whisper on a 10-series card. CPU-only processing also works, but I wouldn’t recommend it for anything beyond a single movie unless you’re very patient.
 
-An episode of anime (~24 minutes) on my hardware (GTX 1070) takes about 3 minutes. For a library of eighty 24-episode seasons, that would be about 96 hours of processing time.
+An episode of anime (~24 minutes) on my hardware (GTX 1070) takes about 3 minutes using the small model size. For a library of eighty 24-episode seasons, that would be about 96 hours of processing time.
 
 ![Generating subtitles for a 24-minute anime episode on a GTX 1070.](/assets/images/whisper_screenshot.png)  
 
 Overall, I recommend Whisper to anyone who wants to complete their Japanese media library and doesn't care too harshly about the complete accuracy of the subtitles.
 
+I'll be sure to upload my batch processing script for FTP and local files soon. After I finish running it against my own collection.
