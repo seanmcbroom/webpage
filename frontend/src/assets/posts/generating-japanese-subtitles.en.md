@@ -9,7 +9,7 @@ Have you ever wanted Japanese subtitles for a movie you downloaded, yet couldn't
 
 So why does Japanese media have this problem anyway? Well, it mostly comes down to convenience and laws. Most Japanese media (e.g., anime, movies) assumes the viewer will understand Japanese, and there are no closed-captioning laws like in the U.S. Even in DVD/Bluray distributions, there's no reason to add a Japanese track that most consumers will never use. The only exception is Netflix Japan, which always has official subtitles availible.
 
-![An example of a subtitle release site](/assets/images/kitsunekko_example.png)  
+![An example of a subtitle release site](/assets/images/kitsunekko_example.webp)  
 
 But you aren't out of luck just yet! There are tons of releases available on sites like [Kitsunekko](https://kitsunekko.net/). Though, this introduces two new problems:  
 
@@ -31,8 +31,8 @@ In terms of hardware, a 20- or 30-series NVIDIA GPU is ideal, though it *is* pos
 
 An episode of anime (~24 minutes) on my hardware (GTX 1070) takes about 3 minutes using the small model size. For a library of eighty 24-episode seasons, that would be about 96 hours of processing time.
 
-![Generating subtitles for a 24-minute anime episode on a GTX 1070.](/assets/images/whisper_screenshot.png)  
+![Generating subtitles for a 24-minute anime episode on a GTX 1070.](/assets/images/whisper_screenshot.webp)  
 
-Overall, I recommend Whisper to anyone who wants to complete their Japanese media library and doesn't care too harshly about the complete accuracy of the subtitles.
+Overall, I recommend Whisper to anyone who wants to complete their Japanese media library without spending days manually matching subtitles to video files, especially if they don’t require perfect accuracy.
 
 I'll be sure to upload my batch processing script for FTP and local files soon. After I finish running it against my own collection.
