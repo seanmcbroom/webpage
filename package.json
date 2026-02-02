@@ -33,7 +33,7 @@
     "type-fest": "5.4.1",
     "typescript": "5.9.3",
     "typescript-eslint": "8.53.1",
-    "vitest": "4.0.16",
+    "vitest": "4.0.18",
     "vue-tsc": "3.2.3",
     "tsx": "4.21.0"
   }
