@@ -1,7 +1,7 @@
 import { useNavigatorLanguage, watchImmediate } from "@vueuse/core";
 import { computed, watchEffect } from "vue";
 
-import { CommonStore } from "./super/common-store";
+import { CommonStore } from "@/store/super/common-store";
 
 import { i18n } from "@/plugins/i18n";
 
@@ -32,15 +32,17 @@ class ClientSettingsStore extends CommonStore<ClientSettingsState> {
         : "auto";
   }
 
-  public get locale(): ClientSettingsState["locale"] {
+  public get locale(): ClientSettthis._state.localeingsState["locale"] {
     return this._state.locale;
   }
 
   private readonly _updateLocale = (): void => {
-    i18n.locale.value =
+    this.locale =
       this.locale === "auto"
         ? this._BROWSER_LANGUAGE.value || String(i18n.fallbackLocale.value)
         : this.locale;
+
+    i18n.locale.value = this.locale;
   };
 
   public constructor() {
@@ -51,13 +53,14 @@ class ClientSettingsStore extends CommonStore<ClientSettingsState> {
       },
       "localStorage",
     );
+
+    console.log("ClientSettingsStore initialized with locale:", this.locale);
+
     /**
      * == WATCHERS ==
      */
 
-    /**
-     * Locale change
-     */
+    // Locale change
     watchEffect(() => {
       this._updateLocale();
     });
