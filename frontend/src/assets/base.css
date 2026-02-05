@@ -1,12 +1,3 @@
-@font-face {
-  font-family:
-    'Ubuntu Mono',
-    'Times New Roman' monospace;
-  font-weight: 400;
-  font-style: normal;
-  src: url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-}
-
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
   --vt-c-white: #ffffff;
@@ -86,7 +77,7 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
 
-  font-family: 'Ubuntu Mono', 'Times New Roman', monospace;
+  font-family: 'Times New Roman', serif;
   font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
