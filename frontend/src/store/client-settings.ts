@@ -54,8 +54,6 @@ class ClientSettingsStore extends CommonStore<ClientSettingsState> {
       "localStorage",
     );
 
-    console.log("ClientSettingsStore initialized with locale:", this.locale);
-
     /**
      * == WATCHERS ==
      */
