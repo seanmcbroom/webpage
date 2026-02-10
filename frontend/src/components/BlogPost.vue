@@ -27,7 +27,13 @@ const loadMarkdown = (slug: string, lang: string) => {
   const file = Object.keys(posts).find((path) =>
     path.endsWith(`${slug}.${lang}.md`),
   );
+
   if (!file) {
+    if (lang !== "en") {
+      loadMarkdown(slug, "en");
+      return;
+    }
+
     html.value = "";
     meta.value = {};
     return;
