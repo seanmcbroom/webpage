@@ -94,6 +94,6 @@ export function getAllPosts(locale = "en"): Post[] {
   // Sort by date descending
   return result.sort(
     (a, b) =>
-      new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime()
+      new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime(),
   );
 }
