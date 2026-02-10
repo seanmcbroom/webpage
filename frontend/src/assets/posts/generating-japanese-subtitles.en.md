@@ -17,7 +17,10 @@ But you aren't out of luck just yet! There are tons of releases available on sit
 1. As I mentioned before, sometimes there are *no* official subs - they're made by fans, so quality can be inconsistent.
 2. Most sub release sites don't have an API or RSS feed for automatic downloads, so they're not convenient either.
 
-![An example of a subtitle release site](/assets/static-images/kitsunekko_example.webp)  
+<figure>
+  <img src="/assets/static-images/kitsunekko_example.webp" alt="Subtitle release site">
+  <figcaption>An example of a subtitle release site</figcaption>
+</figure>
 
 So what is the solution? Well, there is no perfect solution, but the easiest way to complete your subtitle collection is to generate it with AI. Obviously, official subs will always be better than AI, but as I mentioned before, those are not always available. AI subs are comparable in quality to fansubs, though they might make mistakes with slang or muffled sounds.
 
@@ -34,7 +37,10 @@ In terms of hardware, a 20- or 30-series NVIDIA GPU is ideal, though it *is* pos
 
 An episode of anime (~24 minutes) on my hardware (GTX 1070) takes about 3 minutes using the medium model size. For a library of eighty 24-episode seasons, that would be about 96 hours of processing time.
 
-![Generating subtitles for a 24-minute anime episode on a GTX 1070.](/assets/static-images/whisper_screenshot.webp)  
+<figure>
+  <img src="/assets/static-images/whisper_screenshot.webp" alt="Subtitle release site">
+  <figcaption>Generating subtitles for a 24-minute anime episode on a GTX 1070.</figcaption>
+</figure>
 
 After a few days of troubleshooting, I finally put together a reliable batch-edit script over FTP. I’m not sharing it publicly yet, though, because media libraries can be tricky. Just one small mistake can cause major problems.
 

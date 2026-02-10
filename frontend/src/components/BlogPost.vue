@@ -55,7 +55,7 @@ const loadMarkdown = (slug: string, lang: string) => {
     markdown = raw.slice(match[0].length).trim();
   }
 
-  const md = new MarkdownIt();
+  const md = new MarkdownIt({ html: true });
   html.value = md.render(markdown);
   created.value = new Date(meta.value.upload);
   updated.value = new Date(meta.value.update);
@@ -111,6 +111,6 @@ watch(
     </header>
 
     <!-- Markdown content -->
-    <div v-html="html" class="[&>*]:mb-5 [&>*]:mt-5"></div>
+    <div v-html="html" class="[&>*]:mb-3 [&>*]:mt-3"></div>
   </article>
 </template>
