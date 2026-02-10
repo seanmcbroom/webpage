@@ -52,25 +52,48 @@ function parseFrontmatter(content: string): {
 
 // Get all posts filtered by locale
 export function getAllPosts(locale = "en"): Post[] {
-  return Object.entries(posts)
-    .map(([path, raw]): Post => {
-      const { metadata, body } = parseFrontmatter(raw);
+  // Parse all posts into structured objects
+  const allPosts: Post[] = Object.entries(posts).map(([path, raw]): Post => {
+    const { metadata, body } = parseFrontmatter(raw);
 
-      // filename: slug.locale.md
-      const file = path.split("/").pop()!;
-      const [slug, lang] = file.replace(".md", "").split(".");
+    // filename: slug.locale.md
+    const file = path.split("/").pop()!;
+    const [slug, lang] = file.replace(".md", "").split(".");
 
-      return {
-        slug,
-        locale: lang,
-        metadata,
-        body,
-      };
-    })
-    .filter((post) => post.locale === locale)
-    .sort(
-      (a, b) =>
-        new Date(b.metadata.date).getTime() -
-        new Date(a.metadata.date).getTime(),
-    );
+    return {
+      slug,
+      locale: lang,
+      metadata,
+      body,
+    };
+  });
+
+  // Group posts by slug
+  const postsBySlug = new Map<string, Post[]>();
+  allPosts.forEach((post) => {
+    if (!postsBySlug.has(post.slug)) {
+      postsBySlug.set(post.slug, []);
+    }
+    postsBySlug.get(post.slug)!.push(post);
+  });
+
+  // Select the requested locale, fallback to "en"
+  const result: Post[] = [];
+  postsBySlug.forEach((group) => {
+    // Try to find the requested locale
+    let post = group.find((p) => p.locale === locale);
+
+    // Fallback to English
+    post ??= group.find((p) => p.locale === "en");
+
+    if (post) {
+      result.push(post);
+    }
+  });
+
+  // Sort by date descending
+  return result.sort(
+    (a, b) =>
+      new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime()
+  );
 }
