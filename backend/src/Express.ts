@@ -22,7 +22,10 @@ app.use((req, res, next) => {
   // Add CSP headers
   res.setHeader(
     "Content-Security-Policy",
-    "default-src 'self' 'unsafe-inline' kirakirafoxx.com; img-src 'self' https: data:; font-src 'self' data: fonts.googleapis.com fonts.gstatic.com;",
+    "default-src 'self' 'unsafe-inline'; " +
+      "img-src 'self' https: data:; " +
+      "style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; " +
+      "font-src 'self' https://fonts.gstatic.com data:;",
   );
 
   next();
