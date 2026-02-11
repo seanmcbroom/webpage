@@ -111,6 +111,6 @@ watch(
     </header>
 
     <!-- Markdown content -->
-    <div v-html="html" class="[&>*]:mb-3 [&>*]:mt-3"></div>
+    <div v-html="html" class="[&>*]:mb-4 [&>*]:mt-4"></div>
   </article>
 </template>
