@@ -7,7 +7,7 @@ import { fileURLToPath, URL } from "node:url";
 import {
   Vuetify3Resolver,
   VueUseComponentsResolver,
-  VueUseDirectiveResolver,
+  VueUseDirectiveResolver
 } from "unplugin-vue-components/resolvers";
 import Components from "unplugin-vue-components/vite";
 import { defineConfig } from "vite";
@@ -23,7 +23,7 @@ export default defineConfig({
       compositionOnly: true,
       fullInstall: false,
       forceStringify: true,
-      include: resolve("locales/**"),
+      include: resolve("locales/**")
     }),
     tailwindcss(),
     imagetools(),
@@ -33,25 +33,25 @@ export default defineConfig({
       resolvers: [
         Vuetify3Resolver(),
         VueUseComponentsResolver(),
-        VueUseDirectiveResolver(),
-      ],
-    }),
+        VueUseDirectiveResolver()
+      ]
+    })
   ],
   resolve: {
     alias: [
       {
         find: "@",
-        replacement: fileURLToPath(new URL("./src", import.meta.url)),
-      },
-    ],
+        replacement: fileURLToPath(new URL("./src", import.meta.url))
+      }
+    ]
   },
   server: {
     proxy: {
       "^/api": {
         target: "http://localhost:5055",
         changeOrigin: false,
-        secure: false,
-      },
-    },
-  },
+        secure: false
+      }
+    }
+  }
 });

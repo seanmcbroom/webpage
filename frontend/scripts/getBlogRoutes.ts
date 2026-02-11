@@ -21,7 +21,7 @@ export function getBlogRoutes(): BlogItem[] {
       const [slug] = file.replace(/\.md$/, "").split(".");
 
       return {
-        slug: `posts/${slug}`,
+        slug: `posts/${slug}`
       };
     })
     .filter((r): r is BlogItem => Boolean(r));

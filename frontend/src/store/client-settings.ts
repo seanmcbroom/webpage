@@ -49,9 +49,9 @@ class ClientSettingsStore extends CommonStore<ClientSettingsState> {
     super(
       "clientSettings",
       {
-        locale: "auto",
+        locale: "auto"
       },
-      "localStorage",
+      "localStorage"
     );
 
     /**

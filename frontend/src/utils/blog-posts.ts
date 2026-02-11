@@ -20,8 +20,8 @@ export const posts: Record<string, string> = import.meta.glob(
   {
     eager: true,
     query: "?raw",
-    import: "default",
-  },
+    import: "default"
+  }
 ) as Record<string, string>;
 
 // Parse frontmatter (YAML-like) from markdown
@@ -64,7 +64,7 @@ export function getAllPosts(locale = "en"): Post[] {
       slug,
       locale: lang,
       metadata,
-      body,
+      body
     };
   });
 
@@ -94,6 +94,6 @@ export function getAllPosts(locale = "en"): Post[] {
   // Sort by date descending
   return result.sort(
     (a, b) =>
-      new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime(),
+      new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime()
   );
 }

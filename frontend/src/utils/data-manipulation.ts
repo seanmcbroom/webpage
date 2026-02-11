@@ -9,11 +9,11 @@ import { defu } from "defu";
  */
 export function mergeExcludingUnknown<T extends object, K extends keyof T>(
   object: T,
-  defaultObject: T,
+  defaultObject: T
 ): T {
   const defaultKeys = new Set(Object.keys(defaultObject) as K[]);
   const missingKeys = (Object.keys(object) as K[]).filter(
-    (key) => !defaultKeys.has(key),
+    (key) => !defaultKeys.has(key)
   );
 
   object = defu(object, defaultObject);

@@ -3,11 +3,11 @@
  */
 export function getLocaleName(
   fromCode: string,
-  toCode = "en",
+  toCode = "en"
 ): string | undefined {
   return new Intl.DisplayNames([toCode], {
     type: "language",
-    languageDisplay: "standard",
+    languageDisplay: "standard"
   })
     .of(fromCode)
     ?.toLowerCase();

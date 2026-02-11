@@ -56,9 +56,9 @@ export function useMeta(meta: PageMeta) {
     [
       () => locale.value,
       () => resolve(meta.title),
-      () => (meta.description ? resolve(meta.description) : ""),
+      () => (meta.description ? resolve(meta.description) : "")
     ],
     updateMeta,
-    { immediate: true },
+    { immediate: true }
   );
 }

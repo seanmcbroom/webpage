@@ -5,22 +5,22 @@ export interface RouteItem {
 
 export const routes: RouteItem[] = [
   {
-    path: "/",
+    path: "/"
   },
   {
-    path: "/about",
+    path: "/about"
   },
   {
-    path: "/blog",
+    path: "/blog"
   },
   {
-    path: "/resume",
+    path: "/resume"
   },
   {
-    path: "/contact",
+    path: "/contact"
   },
   {
     path: "/posts/:slug",
-    dynamic: true,
-  },
+    dynamic: true
+  }
 ];

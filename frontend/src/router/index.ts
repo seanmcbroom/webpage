@@ -15,15 +15,15 @@ const routeMap: Record<string, Component> = {
   "/blog": BlogView,
   "/resume": ResumeView,
   "/contact": ContactView,
-  "/posts/:slug": BlogPost,
+  "/posts/:slug": BlogPost
 };
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: routes.map((r) => ({
     path: r.path,
-    component: routeMap[r.path],
-  })),
+    component: routeMap[r.path]
+  }))
 });
 
 export default router;

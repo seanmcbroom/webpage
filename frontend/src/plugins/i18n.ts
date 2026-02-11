@@ -7,7 +7,7 @@ export const vuePlugin = createI18n({
   fallbackLocale: DEFAULT_LANGUAGE,
   globalInjection: true,
   legacy: false,
-  messages: messages,
+  messages: messages
 });
 
 export const i18n = vuePlugin.global;

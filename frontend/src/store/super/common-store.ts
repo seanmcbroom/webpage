@@ -24,7 +24,7 @@ export abstract class CommonStore<T extends object> {
   protected constructor(
     storeKey: string,
     defaultState: T,
-    persistence?: Persistence,
+    persistence?: Persistence
   ) {
     this._storeKey = storeKey;
     this._defaultState = defaultState;
@@ -41,7 +41,7 @@ export abstract class CommonStore<T extends object> {
       ? (reactive(structuredClone(defaultState)) as T)
       : useStorage(storeKey, structuredClone(defaultState), storage, {
           mergeDefaults: (storageValue: T, defaults: T) =>
-            mergeExcludingUnknown(storageValue, defaults),
+            mergeExcludingUnknown(storageValue, defaults)
         });
   }
 }

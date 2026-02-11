@@ -1,23 +1,27 @@
-import globals from "globals";
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+import globals from 'globals';
 import tsParser from '@typescript-eslint/parser';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
-import pluginVue from "eslint-plugin-vue";
+import pluginVue from 'eslint-plugin-vue';
+import vueParser from 'vue-eslint-parser';
+
 import prettierConfig from 'eslint-config-prettier';
 import eslintPluginPrettier from 'eslint-plugin-prettier';
 import eslintPluginImport from 'eslint-plugin-import';
 import eslintPluginUnusedImports from 'eslint-plugin-unused-imports';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import vueParser from 'vue-eslint-parser';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  ...pluginVue.configs["flat/essential"],
+  // Base Vue essential config
+  ...pluginVue.configs['flat/essential'],
 
+  // Vue-specific rules
   {
-    files: ["**/*.vue"],
+    files: ['**/*.vue'],
     languageOptions: {
       parser: vueParser,
       parserOptions: {
@@ -40,7 +44,12 @@ export default [
       'unused-imports/no-unused-imports': 'error',
       'unused-imports/no-unused-vars': [
         'warn',
-        { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
+        {
+          vars: 'all',
+          varsIgnorePattern: '^_',
+          args: 'after-used',
+          argsIgnorePattern: '^_',
+        },
       ],
       'import/order': [
         'warn',
@@ -56,8 +65,9 @@ export default [
     },
   },
 
+  // JS/TS rules for all non-Vue files
   {
-    files: ["**/*.{js,mjs,cjs,ts}"],
+    files: ['**/*.{js,mjs,cjs,ts}'],
     languageOptions: {
       globals: globals.browser,
       parser: tsParser,
@@ -74,7 +84,12 @@ export default [
       '@typescript-eslint': tsPlugin,
     },
     rules: {
-      'prettier/prettier': 'error',
+      'prettier/prettier': [
+        'error',
+        {
+          trailingComma: 'none', // disables all trailing commas
+        },
+      ],
       '@typescript-eslint/indent': ['error', 2],
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/consistent-type-imports': 'error',
@@ -87,10 +102,12 @@ export default [
     },
   },
 
+  // Prettier overrides
   {
     rules: { ...prettierConfig.rules },
   },
 
+  // Ignore these files/folders
   {
     ignores: ['dist/**/*', 'eslint.config.js', 'webpack.config.js'],
   },

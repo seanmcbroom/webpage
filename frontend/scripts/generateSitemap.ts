@@ -14,7 +14,7 @@ function generateSitemap() {
       url: `${hostname}${r.path}`,
       changefreq: "monthly",
       priority: r.path === "/" ? "1.0" : "0.7",
-      lastmod: new Date().toISOString(),
+      lastmod: new Date().toISOString()
     }));
 
   const blogRoutes = getBlogRoutes().map((b) => {
@@ -29,7 +29,7 @@ function generateSitemap() {
       url: `${hostname}/${b.slug}`,
       changefreq: "weekly",
       priority: "0.6",
-      lastmod,
+      lastmod
     };
   });
 
@@ -45,7 +45,7 @@ ${allRoutes
     <lastmod>${r.lastmod}</lastmod>
     <changefreq>${r.changefreq}</changefreq>
     <priority>${r.priority}</priority>
-  </url>`,
+  </url>`
   )
   .join("")}
 </urlset>`;

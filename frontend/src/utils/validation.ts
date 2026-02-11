@@ -4,7 +4,7 @@ import type { AxiosError } from "axios";
  * Validator to which enforces that a select component has at least one value selected
  */
 export const SomeItemSelectedRule = [
-  (v: unknown[]): boolean | string => v.length !== 0,
+  (v: unknown[]): boolean | string => v.length !== 0
 ];
 
 /**
@@ -32,7 +32,7 @@ export function isStr(value: unknown): value is string {
  * Check if the given value is a funcion
  */
 export function isFunc<T extends (...args: unknown[]) => unknown>(
-  value: unknown,
+  value: unknown
 ): value is T {
   return typeof value === "function";
 }
@@ -85,7 +85,7 @@ export function isArray(object: unknown): object is unknown[] {
  * @type TypeScript Decorator
  */
 export function sealed<T extends new (...args: unknown[]) => unknown>(
-  constructor: T,
+  constructor: T
 ): void {
   Object.seal(constructor);
   Object.seal(constructor.prototype);
