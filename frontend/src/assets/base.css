@@ -77,7 +77,7 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
 
-  font-family: 'Times New Roman', serif;
+  font-family: 'Times New Roman', 'Noto Serif JP', serif;
   font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
