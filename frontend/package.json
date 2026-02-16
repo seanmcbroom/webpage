@@ -28,7 +28,7 @@
     "@intlify/unplugin-vue-i18n": "6.0.8",
     "@tailwindcss/vite": "4.1.18",
     "@vueuse/core": "14.2.0",
-    "axios": "1.13.2",
+    "axios": "1.13.5",
     "defu": "6.1.4",
     "markdown-it": "14.1.0",
     "vue": "3.5.28",
