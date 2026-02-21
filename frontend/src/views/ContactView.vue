@@ -10,7 +10,6 @@
           >sean.mcbroom@outlook.com</a
         >
       </span>
-      <span> {{ t("phone") }}—<a>+1 (515) 333 7532 </a> </span>
       <span>
         {{ t("linkedin") }}—<a
           href="https://www.linkedin.com/in/sean-mcbroom/"
