@@ -51,7 +51,7 @@
     "globals": "17.4.0",
     "npm-run-all2": "8.0.4",
     "prettier": "3.8.1",
-    "tailwindcss": "4.1.18",
+    "tailwindcss": "4.2.2",
     "unplugin-vue-components": "31.0.0",
     "url-loader": "4.1.1",
     "vite": "8.0.1",
