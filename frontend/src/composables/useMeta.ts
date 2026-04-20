@@ -2,7 +2,7 @@ import type { Ref } from "vue";
 import { unref, watch } from "vue";
 import { useI18n } from "vue-i18n";
 
-const DEFAULT_TITLE = "SEAN MCBROOM";
+const DEFAULT_TITLE = "Sean McBroom";
 
 export interface PageMeta {
   title: () => string | Ref<string>;
