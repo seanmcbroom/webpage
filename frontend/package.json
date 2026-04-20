@@ -50,7 +50,7 @@
     "file-loader": "6.2.0",
     "globals": "17.4.0",
     "npm-run-all2": "8.0.4",
-    "prettier": "3.8.1",
+    "prettier": "3.8.3",
     "tailwindcss": "4.2.2",
     "unplugin-vue-components": "32.0.0",
     "url-loader": "4.1.1",
