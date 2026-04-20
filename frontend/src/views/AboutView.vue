@@ -21,13 +21,17 @@
       </span>
     </div>
 
+    <!-- 
+    Removed birthday and age display.
+
     <span class="text-left w-[100%]">
       <span
         >{{ t("birthday") }}: {{ birthday.toLocaleDateString(locale) }}</span
       >
       <br />
+      
       <span>{{ t("age") }}: {{ getYearsSince(birthday) }} </span>
-    </span>
+    </span>-->
 
     <a href="/">{{ t("home") }}</a>
   </div>
@@ -42,17 +46,17 @@ import { useMeta } from "@/composables/useMeta";
 
 const { t, locale } = useI18n();
 
-const birthday = new Date("7/11/2004");
-
 useMeta({
   title: () => t("about"),
   description: () => t("about-meta-description"),
 });
 
-const getYearsSince = (dateOfBirth: Date, dateToCalculate = new Date()) => {
-  const dob = new Date(dateOfBirth).getTime();
-  const dateToCompare = new Date(dateToCalculate).getTime();
-  const age = (dateToCompare - dob) / (365.25 * 24 * 60 * 60 * 1000);
-  return Math.floor(age);
-};
+// Function to calculate years since a given date, defaulting to the current date
+// const birthday = new Date("7/11/2004");
+// const getYearsSince = (dateOfBirth: Date, dateToCalculate = new Date()) => {
+//   const dob = new Date(dateOfBirth).getTime();
+//   const dateToCompare = new Date(dateToCalculate).getTime();
+//   const age = (dateToCompare - dob) / (365.25 * 24 * 60 * 60 * 1000);
+//   return Math.floor(age);
+// };
 </script>

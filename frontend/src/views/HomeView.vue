@@ -1,6 +1,8 @@
 <template>
-  <div class="flex flex-col my-auto items-center space-y-1">
-    <span class="md:text-4xl text-xl font-bold italic text-center">
+  <div class="flex flex-col my-auto items-center space-y-3">
+    <span
+      class="md:text-4xl text-xl font-bold italic text-center text-regal-blue"
+    >
       SEAN MCBROOM
     </span>
 
