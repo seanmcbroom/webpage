@@ -1,31 +1,17 @@
-
 {
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
-    "target": "es2022",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "outDir": "dist",
-    "baseUrl": ".",
+    "module": "nodenext",
+    "rootDir": "./src",
+    "outDir": "./dist",
     "paths": {
       "@/*": ["./src/*"],
+      "@/test/*": ["./test/*"]
     },
-    "lib": ["es2023"],
-    "strict": true,
-    "esModuleInterop": true,
-    "allowJs": false,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,
     "types": ["node"],
-    "resolveJsonModule": true
+    "lib": ["es2023"],
+    "composite": true
   },
-  "include": [
-    "src/**/*",
-    "test/**/*",
-    "scripts/**/*",
-    "**/*.js"
-  ],
-  "exclude": [
-    "dist",
-    "node_modules"
-  ]
+  "include": ["src/**/*", "test/**/*"],
+  "exclude": ["node_modules"]
 }

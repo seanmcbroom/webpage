@@ -1,22 +1,15 @@
 {
-  "extends": "@tsconfig/node20/tsconfig.json",
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "jsx": "preserve",
+    "lib": ["es2023", "dom"],
     "paths": {
       "@/*": ["./src/*"]
     },
-    "lib": [
-      "ES2024",
-      "DOM"
-    ]
+    "composite": true
   },
-  "include": [
-    "**/*.ts",
-    "**/*.vue",
-    "**/*d.ts",
-    "**/*.json"
-  ],
-  "exclude": [
-    "dist",
-    "node_modules"
-  ],
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }
