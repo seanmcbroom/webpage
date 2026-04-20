@@ -44,7 +44,7 @@ import pfpFallback from "@/assets/images/pfp.jpg?w=150&as=url";
 import pfpWebp from "@/assets/images/pfp.jpg?w=250;200;150&format=webp&as=srcset";
 import { useMeta } from "@/composables/useMeta";
 
-const { t, locale } = useI18n();
+const { t } = useI18n();
 
 useMeta({
   title: () => t("about"),
