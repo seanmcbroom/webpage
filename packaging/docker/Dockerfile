@@ -4,6 +4,7 @@ FROM node:lts-alpine AS frontend
 
 WORKDIR /app
 COPY package*.json /app
+COPY tsconfig.base.json /app
 COPY frontend /app/frontend
 WORKDIR /app/frontend
 RUN npm ci && npm run build
@@ -13,6 +14,7 @@ FROM node:lts-alpine AS backend
 
 WORKDIR /app
 COPY package*.json /app
+COPY tsconfig.base.json /app
 COPY backend /app/backend
 WORKDIR /app/backend
 RUN npm ci
