@@ -10,6 +10,6 @@
     },
     "composite": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "scripts/**/*", "types/**/*", "vite.config.ts"],
   "exclude": ["node_modules"]
 }
