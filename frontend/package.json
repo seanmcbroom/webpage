@@ -25,7 +25,7 @@
     "clean": "git clean -fxd"
   },
   "dependencies": {
-    "@intlify/unplugin-vue-i18n": "11.0.7",
+    "@intlify/unplugin-vue-i18n": "11.1.2",
     "@tailwindcss/vite": "4.2.2",
     "@vueuse/core": "14.2.1",
     "axios": "1.15.0",
