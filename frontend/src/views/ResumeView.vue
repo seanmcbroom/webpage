@@ -11,7 +11,7 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 
-import resume from "@/assets/files/Sean McBroom Resume 2026-1.pdf";
+import resume from "@/assets/files/Sean McBroom Resume 2026Q2.pdf";
 import { useMeta } from "@/composables/useMeta";
 
 const { t } = useI18n();
