@@ -21,7 +21,7 @@
     "dev": "concurrently \"npm run dev -w frontend\" \"npm run dev -w backend\""
   },
   "devDependencies": {
-    "@types/node": "26.0.0",
+    "@types/node": "26.1.0",
     "@typescript-eslint/eslint-plugin": "8.62.0",
     "concurrently": "10.0.3",
     "eslint": "9.39.2",
